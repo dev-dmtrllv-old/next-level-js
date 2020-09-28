@@ -1,0 +1,39 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"removeComments": true,
+		"moduleResolution": "Node",
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"jsx": "react",
+		"module": "ESNext",
+		"target": "ES6",
+		"baseUrl": "./src",
+		"rootDir": "./src",
+		"outDir": "./build",
+		"paths": {
+			"app": [
+				"./app/index.tsx"
+			],
+			"components": [
+				"./components/index.tsx"
+			],
+			"components/*": [
+				"./components/*"
+			],
+			"utils": [
+				"./utils/index.tsx"
+			],
+			"utils/*": [
+				"./utils/*"
+			]
+		},
+	},
+	"include": [
+		"./src/**/*",
+		"./global.d.ts"
+	]
+}
