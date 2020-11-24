@@ -1,12 +1,13 @@
+import { TheoremApp } from "components/TheoremApp";
+import { TheoremProvider } from "components/TheoremProvider";
 import React from "react";
-import { View } from "views";
 
 const App = () =>
 {
 	return (
-		<View className="app">
-			Hello, world!
-		</View>
+		<TheoremProvider>
+			<TheoremApp />
+		</TheoremProvider>
 	);
 }
 
