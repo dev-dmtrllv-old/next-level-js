@@ -34,9 +34,8 @@ module.exports = {
 				use: {
 					loader: "file-loader",
 					options: {
-						name: "[name].[ext]",
-						outputPath: "fonts",
-						esModule: false,
+						name: "./fonts/[name].[ext]",
+						publicPath: "../"
 					},
 				},
 			},
@@ -53,10 +52,9 @@ module.exports = {
 				test: /\.(png|jpe?g|gif)$/i,
 				use: [
 					{
-						loader: 'file-loader',
+						loader: "file-loader",
 						options: {
-							name: "[name].[ext]",
-							outputPath: "images"
+							name: "./images/[name].[ext]",
 						}
 					},
 				],
@@ -74,4 +72,10 @@ module.exports = {
 		}),
 		new CleanWebpackPlugin()
 	],
+	devServer: {
+		publicPath: "/",
+		clientLogLevel: "warning",
+		contentBase: "dist",
+        overlay: true,
+	}
 };
