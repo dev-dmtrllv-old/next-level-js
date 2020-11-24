@@ -39,9 +39,11 @@ export const theorems: TheoremTextData = {
 
 export type TheoremResult = {
 	id: string;
-	points: 0 | 1 | 2 | 3;
+	points: TheoremPoints;
 }
 
 export type TheoremTextData = {
 	[id: string]: string;
 };
+
+export type TheoremPoints = 0 | 1 | 2 | 3;
