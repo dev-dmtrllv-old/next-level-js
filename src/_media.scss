@@ -1,0 +1,24 @@
+@mixin media($medias...) {
+	@each $media in $medias {
+		@if $media == "mobile" {
+			@media only screen and (max-width: 460px) {
+				@content;
+			}
+		}
+		@else if $media == "tablet" {
+			@media only screen and (min-width: 461px) and (max-width: 860px) {
+				@content;
+			}
+		}
+		@else if $media == "desktop" {
+			@media only screen and (min-width: 861px) and (max-width: 1280px) {
+				@content;
+			}
+		}
+		@else if $media == "large" {
+			@media only screen and (min-width: 1281px) {
+				@content;
+			}
+		}
+	}
+}

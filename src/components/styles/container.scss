@@ -1,0 +1,16 @@
+@import "src/media";
+
+.container {
+	@include media("mobile") {
+		padding: 0px 64px;
+	}
+	@include media("tablet") {
+		padding: 0px 86px;
+	}
+	@include media("desktop") {
+		padding: 0px 138px;
+	}
+	@include media("large") {
+		padding: 0px 138px;
+	}
+}
