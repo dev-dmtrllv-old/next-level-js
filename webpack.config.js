@@ -12,9 +12,9 @@ module.exports = {
 	entry: "./src/index.tsx",
 	devtool: "source-map",
 	output: {
-		filename: "[name].bundle.js",
+		filename: "js/[name].bundle.js",
 		path: path.resolve(__dirname, "build"),
-		chunkFilename: "[chunkhash].chunk.js",
+		chunkFilename: "js/[chunkhash].chunk.js",
 	},
 	resolve: {
 		extensions: [".tsx", ".ts", ".js", ".json"],
@@ -35,7 +35,7 @@ module.exports = {
 					loader: "file-loader",
 					options: {
 						name: "[name].[ext]",
-						outputPath: "fonts/",
+						outputPath: "fonts",
 						esModule: false,
 					},
 				},
@@ -47,6 +47,18 @@ module.exports = {
 					"css-loader",
 					"resolve-url-loader",
 					"sass-loader",
+				],
+			},
+			{
+				test: /\.(png|jpe?g|gif)$/i,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: "[name].[ext]",
+							outputPath: "images"
+						}
+					},
 				],
 			},
 		],
