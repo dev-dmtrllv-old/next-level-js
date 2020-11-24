@@ -1,11 +1,52 @@
-html, body
-{
+@font-face {
+	font-family: "trenda";
+	src: url("./assets/fonts/latinotype-trenda-regular.otf");
+}
+
+@font-face {
+	font-family: "trenda-semi-bold";
+	src: url("./assets/fonts/latinotype-trenda-semibold.otf");
+}
+
+@font-face {
+	font-family: "trenda-bold";
+	src: url("./assets/fonts/latinotype-trenda-bold.otf");
+}
+
+@font-face {
+	font-family: "trenda-black";
+	src: url("./assets/fonts/latinotype-trenda-black.otf");
+}
+
+@import "var";
+
+
+
+html,
+body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	position: relative;
 	width: 100vw;
 	#root {
 		min-width: 100vw;
 		min-height: 100vh;
+		position: relative;
+		box-sizing: border-box;
+		#app {
+			h1:nth-child(1) {
+				@include trenda();
+			}
+			h1:nth-child(2) {
+				@include trenda("semi-bold");
+			}
+			h1:nth-child(3) {
+				@include trenda("bold");
+			}
+			h1:nth-child(4) {
+				@include trenda("black");
+			}
+		}
 	}
 }

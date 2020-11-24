@@ -1,0 +1,19 @@
+@mixin trenda ($weight: "normal")
+{
+	@if($weight == "normal")
+	{
+		font-family: "trenda", sans-serif;
+	}
+	@else if($weight == "semi-bold")
+	{
+		font-family: "trenda-semi-bold", sans-serif;
+	}
+	@else if($weight == "bold")
+	{
+		font-family: "trenda-bold", sans-serif;
+	}
+	@else if($weight == "black")
+	{
+		font-family: "trenda-black", sans-serif;
+	}
+}
