@@ -6,10 +6,10 @@ import React from "react";
  */
 export const TheoremContext = React.createContext<TheoremContextProps>(null);
 
-
 export type TheoremContextProps = {
 	updatePoints: (points: TheoremPoints, target: "A" | "B") => void;
 	results: TheoremResults;
 	theoremPageID: number;
 	next: () => void;
+	retry: () => void;
 };
