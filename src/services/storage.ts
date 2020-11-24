@@ -4,7 +4,10 @@ export namespace Storage
 {
 	const THEOREM_POINTS_KEY = "theorem_points";
 
-	const getTheoremResultsObject = () => JSON.parse(localStorage.getItem(THEOREM_POINTS_KEY)) || {};
+	/**
+	 * @returns all the theorem results from storage
+	 */
+	export const getAllTheoremResults = (): TheoremResults => JSON.parse(localStorage.getItem(THEOREM_POINTS_KEY)) || {};
 
 	/**
 	 * Sets one or multiple theorem results in the local storage
@@ -12,7 +15,7 @@ export namespace Storage
 	 */
 	export const setTheoremResults = (results: TheoremResults) => 
 	{
-		let resultsObject = getTheoremResultsObject();
+		let resultsObject = getAllTheoremResults();
 		resultsObject = { ...resultsObject, ...results };
 		localStorage.setItem(THEOREM_POINTS_KEY, JSON.stringify(resultsObject));
 	};
@@ -23,7 +26,7 @@ export namespace Storage
 	 */
 	export const getTheoremResults = (ids: string | string[]): TheoremResults => 
 	{
-		const resultsObject = getTheoremResultsObject();
+		const resultsObject = getAllTheoremResults();
 		ids = Array.isArray(ids) ? ids : [ids];
 		const results: TheoremResults = {};
 		ids.forEach((id) => results[id] = resultsObject[id] || 0);
