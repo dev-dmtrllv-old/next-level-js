@@ -22,6 +22,7 @@ I choose to create the app with React and Typescript. React because I'm fairly f
 ├── build					# Compiled files
 ├── src						# Source files
 	├── App.tsx				# The App's root component
+	├── assets				# Asset files
 	├── components			# Complex component files
 	├── views				# Generic component files
 	└── utils				# Utility files (string, math, reat helper methods)
