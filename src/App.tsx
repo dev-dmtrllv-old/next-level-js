@@ -1,6 +1,6 @@
+import React from "react";
 import { TheoremApp } from "components/TheoremApp";
 import { TheoremProvider } from "components/TheoremProvider";
-import React from "react";
 
 const App = () =>
 {
