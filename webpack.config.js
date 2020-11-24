@@ -30,10 +30,22 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
+				test: /\.(ttf|eot|woff|woff2|svg)$/,
+				use: {
+					loader: "file-loader",
+					options: {
+						name: "[name].[ext]",
+						outputPath: "fonts/",
+						esModule: false,
+					},
+				},
+			},
+			{
 				test: /\.s[ac]ss$/i,
 				use: [
 					MiniCssExtractPlugin.loader,
 					"css-loader",
+					"resolve-url-loader",
 					"sass-loader",
 				],
 			},
