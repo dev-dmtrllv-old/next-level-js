@@ -30,7 +30,7 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.(ttf|eot|woff|woff2|svg)$/,
+				test: /\.(otf|ttf|eot|woff|woff2|svg)$/,
 				use: {
 					loader: "file-loader",
 					options: {
