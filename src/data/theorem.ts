@@ -37,10 +37,9 @@ export const theorems: TheoremTextData = {
 	"18B": "Op conflicten reageer ik meestal snel en direct.",
 };
 
-export type TheoremResult = {
-	id: string;
-	points: TheoremPoints;
-}
+export type TheoremResults = {
+	[id: string]: TheoremPoints;
+};
 
 export type TheoremTextData = {
 	[id: string]: string;
