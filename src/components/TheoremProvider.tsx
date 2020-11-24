@@ -1,5 +1,5 @@
 import React from "react";
-import { TheoremPoints, TheoremResults } from "data/theorem";
+import { TheoremPoints, TheoremResults, THEOREM_MAX_PAGES } from "data/theorem";
 import { Storage } from "services/storage";
 import { clamp } from "utils/math";
 
@@ -13,7 +13,7 @@ export const TheoremProvider: React.FC = ({ children }) =>
 {
 	const [results, setResults] = React.useState<TheoremResults>(Storage.getAllTheoremResults());
 
-	const [currentPageID, setCurrentPageID] = React.useState<number>(Storage.getPageID() || 1);
+	const [currentPageID, setCurrentPageID] = React.useState<number>(Storage.getPageID());
 
 	const ctx: TheoremContextProps = {
 		updatePoints: (points, target) =>
@@ -33,15 +33,23 @@ export const TheoremProvider: React.FC = ({ children }) =>
 		next: () =>
 		{
 			const nextID = currentPageID + 1;
-			if (nextID <= 18)
+			if (nextID <= THEOREM_MAX_PAGES)
 			{
 				setCurrentPageID(nextID);
 				Storage.setPageID(nextID);
 			}
 			else
 			{
+				setCurrentPageID(nextID)
+				Storage.setPageID(nextID);
 				console.log("finished", results);
 			}
+		},
+		retry: () => 
+		{
+			setCurrentPageID(0);
+			setResults({});
+			Storage.clear();
 		}
 	};
 
