@@ -37,6 +37,8 @@ export const theorems: TheoremTextData = {
 	"18B": "Op conflicten reageer ik meestal snel en direct.",
 };
 
+export const THEOREM_MAX_PAGES = Object.keys(theorems).length / 2;
+
 export type TheoremResults = {
 	[id: string]: TheoremPoints;
 };
