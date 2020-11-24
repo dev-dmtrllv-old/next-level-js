@@ -1,0 +1,26 @@
+.flex-box {
+	display: flex;
+	&.horizontal {
+		flex-direction: row;
+		&.reversed {
+			flex-direction: row-reverse;
+		}
+		& > .flex-item {
+			height: 100%;
+		}
+	}
+	&.vertical {
+		flex-direction: column;
+		&.reversed {
+			flex-direction: column-reverse;
+		}
+		& > .flex-item {
+			width: 100%;
+		}
+	}
+
+	& > .flex-item > .flex-box {
+		width: 100%;
+		height: 100%;
+	}
+}
