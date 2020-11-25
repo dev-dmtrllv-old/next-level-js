@@ -18,14 +18,14 @@ I choose to create the app with React and Typescript. React because I'm fairly f
 <br/>
 
 ## Project Structure
-.
+. <br/>
 ├── build                # Compiled files <br/>
 ├── src                  # Source files <br/>
-    ├── App.tsx          # The App's root component <br/>
-    ├── assets           # Asset files <br/>
-    ├── components       # Complex component files <br/>
-    ├── views            # Generic component files <br/>
-    └── utils            # Utility files (string, math, reat helper methods) <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── App.tsx          # The App's root component <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── assets           # Asset files <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── components       # Complex component files <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── views            # Generic component files <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── utils            # Utility files (string, math, reat helper methods) <br/>
 ├── index.html           # The html template file  <br>
 └── README.md            # This file <br>
 
