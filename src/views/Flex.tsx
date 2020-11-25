@@ -34,7 +34,7 @@ export const FlexItem: React.FC<FlexItemProps> = ({ className, base, shrink = 1,
 	}
 	else
 	{
-		style.flex = `${shrink} ${grow} auto`;
+		style.flex = `${shrink} ${grow} 0`;
 	}
 
 	return (
