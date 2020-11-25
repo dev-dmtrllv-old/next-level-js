@@ -2,10 +2,10 @@
 
 .container {
 	@include media("mobile") {
-		padding: 0px 64px;
+		padding: 0px 20px;
 	}
 	@include media("tablet") {
-		padding: 0px 86px;
+		padding: 0px 35px;
 	}
 	@include media("desktop") {
 		padding: 0px 138px;
