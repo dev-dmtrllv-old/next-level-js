@@ -10,7 +10,7 @@ import { TheoremResults } from "./TheoremResults";
 export const TheoremApp: React.FC = () => 
 {
 	const { theoremPageID } = React.useContext(TheoremContext);
-	console.log(theoremPageID)
+	
 	if(theoremPageID === 0) // app was never loaded before
 	{
 		return (
