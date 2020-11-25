@@ -1,0 +1,83 @@
+@import "src/media";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+h1 {
+	@include trenda("black");
+}
+
+h2 {
+	@include trenda("bold");
+}
+
+h3,
+h4,
+h5,
+h6 {
+	@include trenda("semi-bold");
+}
+
+@include media("mobile") {
+	h1 {
+	}
+	h2 {
+	}
+	h3 {
+	}
+	h4 {
+	}
+	h5 {
+	}
+	h6 {
+	}
+}
+
+@include media("tablet") {
+	h1 {
+	}
+	h2 {
+	}
+	h3 {
+	}
+	h4 {
+	}
+	h5 {
+	}
+	h6 {
+	}
+}
+@include media("desktop") {
+	h1 {
+	}
+	h2 {
+	}
+	h3 {
+	}
+	h4 {
+	}
+	h5 {
+	}
+	h6 {
+	}
+}
+@include media("large") {
+	h1 {
+	}
+	h2 {
+	}
+	h3 {
+	}
+	h4 {
+	}
+	h5 {
+	}
+	h6 {
+	}
+}
