@@ -76,6 +76,7 @@ module.exports = {
 		publicPath: "/",
 		clientLogLevel: "warning",
 		contentBase: "dist",
-        overlay: true,
+		overlay: true,
+		host: "0.0.0.0"
 	}
 };
