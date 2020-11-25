@@ -6,7 +6,7 @@
 	width: 100%;
 	#header {
 		@include header_height;
-		border-top: 4px solid purple;
+		border-top: 4px solid $purple;
 		width: 100%;
 		top: 0;
 		box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
