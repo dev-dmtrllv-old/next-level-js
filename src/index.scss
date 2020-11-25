@@ -29,27 +29,27 @@ body {
 	#root {
 		position: relative;
 		box-sizing: border-box;
-		#app {
-			h1:nth-child(1) {
-				@include trenda();
-			}
-			h1:nth-child(2) {
-				@include trenda("semi-bold");
-			}
-			h1:nth-child(3) {
-				@include trenda("bold");
-			}
-			h1:nth-child(4) {
-				@include trenda("black");
-			}
+		@include trenda;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: 0;
 		}
-	}
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin: 0;
+	
+		h1 {
+			@include trenda("black");
+		}
+		
+		h2 {
+			@include trenda("bold");
+		}
+	
+		h3 {
+			@include trenda("semi-bold");
+		}
 	}
 }
