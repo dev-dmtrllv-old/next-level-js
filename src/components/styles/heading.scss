@@ -1,3 +1,4 @@
+@import "src/var";
 @import "src/media";
 
 h1,
@@ -17,67 +18,15 @@ h2 {
 	@include trenda("bold");
 }
 
-h3,
-h4,
-h5,
-h6 {
-	@include trenda("semi-bold");
-}
 
-@include media("mobile") {
-	h1 {
-	}
-	h2 {
-	}
-	h3 {
-	}
-	h4 {
-	}
-	h5 {
-	}
-	h6 {
-	}
-}
 
-@include media("tablet") {
+	
+
+@include media("desktop","large") {
 	h1 {
+		font-size: 32px;
 	}
 	h2 {
-	}
-	h3 {
-	}
-	h4 {
-	}
-	h5 {
-	}
-	h6 {
-	}
-}
-@include media("desktop") {
-	h1 {
-	}
-	h2 {
-	}
-	h3 {
-	}
-	h4 {
-	}
-	h5 {
-	}
-	h6 {
-	}
-}
-@include media("large") {
-	h1 {
-	}
-	h2 {
-	}
-	h3 {
-	}
-	h4 {
-	}
-	h5 {
-	}
-	h6 {
+		font-size: 26px;
 	}
 }
