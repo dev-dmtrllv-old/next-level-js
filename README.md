@@ -19,15 +19,15 @@ I choose to create the app with React and Typescript. React because I'm fairly f
 
 ## Project Structure
 .
-├── build					# Compiled files
-├── src						# Source files
-	├── App.tsx				# The App's root component
-	├── assets				# Asset files
-	├── components			# Complex component files
-	├── views				# Generic component files
-	└── utils				# Utility files (string, math, reat helper methods)
-├── index.html				# The html template file 
-└── README.md				# This file
+├── build                # Compiled files <br/>
+├── src                  # Source files <br/>
+    ├── App.tsx          # The App's root component <br/>
+    ├── assets           # Asset files <br/>
+    ├── components       # Complex component files <br/>
+    ├── views            # Generic component files <br/>
+    └── utils            # Utility files (string, math, reat helper methods) <br/>
+├── index.html           # The html template file  <br>
+└── README.md            # This file <br>
 
 <br/>
 
