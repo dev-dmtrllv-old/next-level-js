@@ -17,13 +17,13 @@
 		height: 92px;
 	}
 	@include media("tablet") {
-		height: 120px;
+		height: 102px;
 	}
 	@include media("desktop") {
-		height: 138px;
+		height: 120px;
 	}
 	@include media("large") {
-		height: 100px;
+		height: 138px;
 	}
 }
 
