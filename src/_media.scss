@@ -1,23 +1,23 @@
 $mobile: 480px;
-$tablet: 900px;
+$tablet: 1024px;
 $desktop: 1400px;
 
 @mixin media($medias...) {
 	@each $media in $medias {
 		@if $media == "mobile" {
-			@media only screen and (max-width: $mobile) {
+			@media only screen and (max-width: $mobile + 1) {
 				@content;
 			}
 		} @else if $media == "tablet" {
-			@media only screen and (min-width: $mobile) and (max-width: $tablet) {
+			@media only screen and (min-width: $mobile + 1) and (max-width: $tablet + 1) {
 				@content;
 			}
 		} @else if $media == "desktop" {
-			@media only screen and (min-width: $tablet) and (max-width: $desktop) {
+			@media only screen and (min-width: $tablet + 1) and (max-width: $desktop + 1) {
 				@content;
 			}
 		} @else if $media == "large" {
-			@media only screen and (min-width: $desktop) {
+			@media only screen and (min-width: $desktop + 1) {
 				@content;
 			}
 		}
