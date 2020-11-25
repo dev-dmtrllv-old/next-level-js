@@ -1,0 +1,40 @@
+@import "src/var";
+@import "src/media";
+
+#theorem-intro {
+	.panel {
+		h1 {
+			margin-bottom: 15px !important;
+		}
+		h2 {
+			margin-bottom: 25px !important;
+		}
+
+		@include media("mobile") {
+			border: none;
+			background-color: transparent;
+		}
+
+		.point {
+			@include trenda("semi-bold");
+			margin-bottom: 30px;
+			font-size: 18px;
+			.flex-bullet {
+				flex-basis: 50px !important;
+				min-width: 50px !important;
+				flex: unset !important;
+				@include media("mobile", "tablet") {
+					display: none;
+				}
+				.bullet {
+					top: 2px;
+					display: inline-block;
+					width: 17px;
+					height: 17px;
+					background-color: $grey;
+					border-radius: 20px;
+				}
+			}
+		}
+	}
+}
