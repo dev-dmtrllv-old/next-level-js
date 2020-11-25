@@ -6,7 +6,7 @@ import "./styles/flex.scss";
 
 const FlexContext = React.createContext<ViewDirection>(null);
 
-export const FlexBox: React.FC<FlexBoxProps> = ({ className, dir, children, reversed, ...props }) =>
+export const FlexBox: React.FC<FlexBoxProps> = ({ className, dir = "horizontal", children, reversed, ...props }) =>
 {
 	const cn = getClassFromProps("flex-box", { className, [dir]: true, reversed });
 
