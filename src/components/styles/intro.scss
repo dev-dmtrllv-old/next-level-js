@@ -36,5 +36,21 @@
 				}
 			}
 		}
+
+		.btn-group {
+			.btn.primary {
+				float: right;
+			}
+			@include media("mobile") {
+				text-align: center;
+				.btn {
+					float: unset !important;
+					margin-bottom: 15px;
+
+					// margin-left: 50%;
+					// transform: translateX(-50%);
+				}
+			}
+		}
 	}
 }

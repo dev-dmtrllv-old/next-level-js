@@ -5,6 +5,7 @@ import { Container } from "./Container";
 import { Panel } from "./Panel";
 import { TheoremContext } from "./TheoremContext";
 import { Heading } from "./Heading";
+import { Button } from "./Button";
 
 import "./styles/intro.scss";
 
@@ -36,6 +37,14 @@ export const TheoremIntro = () =>
 							</FlexItem>
 						</FlexBox>
 					))}
+					<View className="btn-group">
+						<Button type="secundary">
+							Ga terug
+						</Button>
+						<Button type="primary" onClick={next}>
+							Volgende
+						</Button>
+					</View>
 				</Panel>
 			</Container>
 		</View>
