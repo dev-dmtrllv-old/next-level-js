@@ -1,25 +1,14 @@
 @import "src/media";
+@import "src/var";
 
 #header-wrapper {
-	@include media("mobile") {
-		--header-height: 64px;
-	}
-	@include media("tablet") {
-		--header-height: 86px;
-	}
-	@include media("desktop") {
-		--header-height: 138px;
-	}
-	@include media("large") {
-		--header-height: 138px;
-	}
+	@include header_height;
 	width: 100%;
-	height: var(--header-height);
 	#header {
+		@include header_height;
 		border-top: 4px solid purple;
 		width: 100%;
 		top: 0;
-		height: var(--header-height);
 		box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
 
 		.logo {
