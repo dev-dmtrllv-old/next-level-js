@@ -1,5 +1,17 @@
 @import "media";
 
+$grey: rgb(112, 112, 122);
+$light-grey: rgb(247, 247, 247);
+$purple: rgb(94, 11, 79);
+$border-radius: 8px;
+$btn-radius: 5px;
+
+$header-h-mobile: 92px;
+$header-h-tablet: 102px;
+$header-h-desktop: 120px;
+$header-h-large: 138px;
+
+
 @mixin trenda($weight: "normal") {
 	@if ($weight == "normal") {
 		font-family: "trenda", sans-serif;
@@ -14,21 +26,15 @@
 
 @mixin header_height {
 	@include media("mobile") {
-		height: 92px;
+		height: $header-h-mobile;
 	}
 	@include media("tablet") {
-		height: 102px;
+		height: $header-h-tablet;
 	}
 	@include media("desktop") {
-		height: 120px;
+		height: $header-h-desktop
 	}
 	@include media("large") {
-		height: 138px;
+		height: $header-h-large;
 	}
 }
-
-$grey: rgb(112, 112, 122);
-$light-grey: rgb(247, 247, 247);
-$purple: rgb(94, 11, 79);
-$border-radius: 8px;
-$btn-radius: 5px;
