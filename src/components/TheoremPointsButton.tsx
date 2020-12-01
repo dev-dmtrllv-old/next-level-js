@@ -1,7 +1,11 @@
 import React from "react";
 import { TheoremPoints } from "data/theorem";
+import { getClassFromProps } from "utils/react";
 import { View } from "views";
-import { TheoremContext } from "./TheoremContext";
+import { TheoremContext, TheoremTarget } from "./TheoremContext";
+import { Heading } from "./Heading";
+
+import "./styles/theorem-points-btn.scss";
 
 export const TheoremPointsButton: React.FC<TheoremPointsButtonProps> = ({ points, target }) =>
 {
@@ -12,13 +16,15 @@ export const TheoremPointsButton: React.FC<TheoremPointsButtonProps> = ({ points
 	const p = results[`${theoremPageID}${target}`];
 
 	return (
-		<View className="theorem-points-btn" onClick={handleClick}>
-			{points} {p >= points ? "active" : ""}
+		<View className={getClassFromProps("theorem-points-btn", { active: p >= points })} onClick={handleClick}>
+			<View position="absolute" center>
+				<Heading>{points}</Heading>
+			</View>
 		</View>
 	);
 }
 
 export type TheoremPointsButtonProps = {
-	target: "A" | "B";
+	target: TheoremTarget;
 	points: TheoremPoints;
 };
