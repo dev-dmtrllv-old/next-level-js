@@ -37,6 +37,8 @@ export const theorems: TheoremTextData = {
 	"18B": "Op conflicten reageer ik meestal snel en direct.",
 };
 
+export const info = "Verdeel 3 punten over de 2 stellingen die het beste bij jou passen. Als je 2 punten aan de ene stelling geeft gaat er automatisch 1 punt naar de andere stelling.";
+
 export const THEOREM_MAX_PAGES = Object.keys(theorems).length / 2;
 
 export type TheoremResults = {
