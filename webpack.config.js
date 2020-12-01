@@ -77,6 +77,7 @@ module.exports = {
 		clientLogLevel: "warning",
 		contentBase: "dist",
 		overlay: true,
-		host: "0.0.0.0"
+		host: "0.0.0.0",
+		port: 1337
 	}
 };

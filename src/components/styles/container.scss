@@ -14,6 +14,8 @@
 		padding: 0px 138px;
 	}
 	@include media("large") {
-		padding: 0px 220px;
+		max-width: 1200px;
+		margin: 0 auto;
+		// padding: 0px 260px;
 	}
 }

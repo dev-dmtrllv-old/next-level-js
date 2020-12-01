@@ -4,7 +4,7 @@
 .btn {
 	border-radius: $btn-radius;
 	border: 1px solid $purple;
-	transition: opacity 150ms, box-shadow 150ms;
+	transition: 150ms;
 	opacity: 0.9;
 	font-size: 20px;
 	padding: 12px 80px;
@@ -14,6 +14,13 @@
 
 	@include media("mobile") {
 		padding: 13px 120px;
+	}
+
+	@include media("desktop", "large") {
+		@include dpr_media(1.25) {
+			font-size: 18px;
+			padding: 8px 65px;
+		}
 	}
 
 	&.primary {

@@ -9,6 +9,7 @@ import { TheoremNextButton } from "./TheoremNextButton";
 import { TheoremResults } from "./TheoremResults";
 import { TheoremButtonGroup } from "./TheoremButtonGroup";
 import { InfoPanel } from "./InfoPanel";
+import { TrackList } from "./Tracklist";
 
 import "./styles/app.scss";
 
@@ -31,22 +32,25 @@ export const TheoremApp: React.FC = () =>
 	else
 	{
 		return (
-			<View className="theorem-app">
-				<Container>
-					<View center>
-						<InfoPanel />
-						<View className="app-grid">
-							<TheoremPanel target="A" />
-							<TheoremButtonGroup target="A" />
-							<TheoremPanel target="B" />
-							<TheoremButtonGroup target="B" />
+			<>
+				<View className="theorem-app">
+					<Container>
+						<View className="body">
+							<InfoPanel />
+							<View className="app-grid">
+								<TheoremPanel target="A" />
+								<TheoremButtonGroup target="A" />
+								<TheoremPanel target="B" />
+								<TheoremButtonGroup target="B" />
+							</View>
+							<View className="next-btn-wrapper">
+								<TheoremNextButton />
+							</View>
 						</View>
-						<View className="next-btn-wrapper">
-							<TheoremNextButton />
-						</View>
-					</View>
-				</Container>
-			</View>
+					</Container>
+				</View>
+				<TrackList />
+			</>
 		);
 	}
 }

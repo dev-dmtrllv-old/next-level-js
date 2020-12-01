@@ -4,19 +4,25 @@
 	margin-bottom: 35px;
 	margin: unset;
 	height: 100%;
+	min-height: 120px;
 	@include media("desktop") {
-		h2  {
-			font-size: 22px !important;
+		h2 {
+			font-size: 20px !important;
 		}
 	}
 	@include media("mobile") {
-		h2  {
+		h2 {
 			font-size: 10px !important;
 		}
 	}
 	@include media("tablet") {
-		h2  {
+		h2 {
 			font-size: 10px !important;
+		}
+	}
+	@include media("desktop", "large") {
+		@include dpr_media(1.25) {
+			font-size: 0px !important;
 		}
 	}
 }

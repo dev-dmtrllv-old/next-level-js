@@ -18,15 +18,17 @@ h2 {
 	@include trenda("bold");
 }
 
-
-
-	
-
-@include media("desktop","large") {
+@include media("desktop", "large") {
 	h1 {
-		font-size: 32px;
+		font-size: 30px;
 	}
 	h2 {
-		font-size: 26px;
+		font-size: 24px;
+
+		@include media("desktop", "large") {
+			@include dpr_media(1.25) {
+				font-size: 20px !important;
+			}
+		}
 	}
 }

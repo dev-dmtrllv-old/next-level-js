@@ -15,10 +15,21 @@
 		@include media("desktop") {
 			font-size: 18px !important;
 		}
+		
 	}
 
 	&.active {
 		background-color: $purple;
 		color: $light-grey;
+	}
+
+	@include media("desktop", "large") {
+		@include dpr_media(1.25, 1.1) {
+			width: 86px;
+			height: 36px;
+			h1 {
+				font-size: 18px;
+			}
+		}
 	}
 }

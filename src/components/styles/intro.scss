@@ -2,6 +2,12 @@
 @import "src/media";
 
 #theorem-intro {
+	padding-top: 75px;
+	@include dpr_media(1.25)
+	{
+		padding-top: 45px;
+
+	}
 	.panel {
 		h1 {
 			margin-bottom: 15px !important;
@@ -18,7 +24,7 @@
 		.point {
 			@include trenda("semi-bold");
 			margin-bottom: 30px;
-			font-size: 18px;
+			font-size: 16px;
 			.flex-bullet {
 				flex-basis: 50px !important;
 				min-width: 50px !important;

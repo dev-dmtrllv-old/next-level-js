@@ -1,0 +1,26 @@
+@import "src/var";
+
+.track-list {
+	@include header_height;
+	padding: 15px 0px;
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+	.container {
+		height: 100%;
+	}
+	.list {
+		height: 13px;
+		column-gap: 15px;
+		.flex-item {
+			border: 1px solid $grey;
+			transform: skew(-52deg);
+			background-color: $light-grey;
+			transition: 150ms;
+			&.active {
+				background-color: $purple;
+			}
+			&.current.is-empty {
+				background-color:#b1b1b1;
+			}
+		}
+	}
+}
