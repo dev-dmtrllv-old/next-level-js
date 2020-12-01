@@ -10,7 +10,7 @@ const btn_blur = (e: React.MouseEvent) =>
 	setTimeout(() => t.blur(), 50);
 };
 
-export const Button: React.FC<ButtonProps> = ({ disabled, type, onClick, ...props }) => 
+export const Button: React.FC<ButtonProps> = ({ disabled, type, onClick, className, ...props }) => 
 {
 	const handleClick = (e: React.MouseEvent<HTMLButtonElement>) =>
 	{
@@ -19,7 +19,7 @@ export const Button: React.FC<ButtonProps> = ({ disabled, type, onClick, ...prop
 	}
 
 	return (
-		<button disabled={disabled} className={getClassFromProps("btn", { [type]: true, disabled })} {...props} onClick={handleClick} />
+		<button disabled={disabled} className={getClassFromProps("btn", { [type]: true, disabled, className })} {...props} onClick={handleClick} />
 	);
 };
 
