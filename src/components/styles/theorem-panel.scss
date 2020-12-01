@@ -1,0 +1,22 @@
+@import "src/media";
+
+.theorem-panel {
+	margin-bottom: 35px;
+	margin: unset;
+	height: 100%;
+	@include media("desktop") {
+		h2  {
+			font-size: 22px !important;
+		}
+	}
+	@include media("mobile") {
+		h2  {
+			font-size: 10px !important;
+		}
+	}
+	@include media("tablet") {
+		h2  {
+			font-size: 10px !important;
+		}
+	}
+}
