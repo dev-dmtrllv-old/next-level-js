@@ -27,8 +27,8 @@
 			grid-column-gap: 15%;
 			grid-row-gap: 15%;
 			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr 1fr;
-			margin-bottom: 5vh;
+			grid-template-rows: 0.25fr 0.25fr;
+			margin-bottom: 6vh;
 
 			.btn-group {
 				order: 1;
@@ -46,6 +46,10 @@
 					order: unset;
 				}
 			}
+		}
+
+		.next-btn-wrapper {
+			text-align: center;
 		}
 	}
 }
