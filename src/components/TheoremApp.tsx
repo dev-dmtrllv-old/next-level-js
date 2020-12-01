@@ -1,41 +1,49 @@
-import { THEOREM_MAX_PAGES } from "data/theorem";
 import React from "react";
+import { THEOREM_MAX_PAGES } from "data/theorem";
 import { View } from "views";
-import { TheoremContainer } from "./TheoremContainer";
+import { Container } from "./Container";
+import { TheoremPanel } from "./TheoremPanel";
 import { TheoremContext } from "./TheoremContext";
 import { TheoremIntro } from "./TheoremIntro";
 import { TheoremNextButton } from "./TheoremNextButton";
 import { TheoremResults } from "./TheoremResults";
+import { TheoremButtonGroup } from "./TheoremButtonGroup";
+import { InfoPanel } from "./InfoPanel";
+
+import "./styles/app.scss";
 
 export const TheoremApp: React.FC = () => 
 {
 	const { theoremPageID } = React.useContext(TheoremContext);
-	
-	if(theoremPageID === 0) // app was never loaded before
+
+	if (theoremPageID === 0) // app was never loaded before
 	{
 		return (
-			<View>
-				<TheoremIntro />
-			</View>
+			<TheoremIntro />
 		)
 	}
-	else if(theoremPageID > THEOREM_MAX_PAGES) // app was finished
+	else if (theoremPageID > THEOREM_MAX_PAGES) // app was finished
 	{
 		return (
-			<View>
-				<TheoremResults />
-			</View>
-		)
+			<TheoremResults />
+		);
 	}
 	else
 	{
 		return (
 			<View className="theorem-app">
-				<TheoremContainer target="A" />
-				<br />
-				<TheoremContainer target="B" />
-				<br />
-				<TheoremNextButton />
+				<Container>
+					<View center>
+						<InfoPanel />
+						<View className="app-grid">
+							<TheoremPanel target="A" />
+							<TheoremButtonGroup target="A" />
+							<TheoremPanel target="B" />
+							<TheoremButtonGroup target="B" />
+						</View>
+					<TheoremNextButton />
+					</View>
+				</Container>
 			</View>
 		);
 	}

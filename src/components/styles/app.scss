@@ -1,0 +1,51 @@
+@import "src/var";
+@import "src/media";
+
+.theorem-app {
+	@include media("mobile") {
+		height: calc(100vh - calc(#{$header-h-mobile} * 2));
+	}
+	@include media("tablet") {
+		height: calc(100vh - calc(#{$header-h-tablet} * 2));
+	}
+	@include media("desktop") {
+		height: calc(100vh - calc(#{$header-h-desktop} * 2));
+	}
+	@include media("large") {
+		height: calc(100vh - calc(#{$header-h-large} * 2));
+	}
+
+	& > .container {
+		height: 100%;
+
+		.info-panel {
+			margin-bottom: 5vh;
+		}
+
+		.app-grid {
+			display: grid;
+			grid-column-gap: 15%;
+			grid-row-gap: 15%;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			margin-bottom: 5vh;
+
+			.btn-group {
+				order: 1;
+
+				.flex-item {
+					text-align: center;
+				}
+			}
+
+			@include media("tablet", "mobile") {
+				grid-template-columns: 1fr;
+				grid-template-rows: 1fr;
+
+				.btn-group {
+					order: unset;
+				}
+			}
+		}
+	}
+}
