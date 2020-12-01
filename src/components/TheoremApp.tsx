@@ -41,7 +41,9 @@ export const TheoremApp: React.FC = () =>
 							<TheoremPanel target="B" />
 							<TheoremButtonGroup target="B" />
 						</View>
-					<TheoremNextButton />
+						<View className="next-btn-wrapper">
+							<TheoremNextButton />
+						</View>
 					</View>
 				</Container>
 			</View>
