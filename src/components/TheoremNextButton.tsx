@@ -1,6 +1,7 @@
 import React from "react";
 import { TheoremPoints } from "data/theorem";
 import { TheoremContext } from "./TheoremContext";
+import { Button } from "./Button";
 
 export const TheoremNextButton: React.FC = () =>
 {
@@ -9,10 +10,12 @@ export const TheoremNextButton: React.FC = () =>
 	const resultsA = results[`${theoremPageID}A`];
 	const resultsB = results[`${theoremPageID}B`];
 
+	const isDisabled = !resultsA && !resultsB;
+
 	return (
-		<button disabled={!resultsA && !resultsB} className="theorem-next-btn" onClick={next}>
-			next
-		</button>
+		<Button type={isDisabled ? "secundary" : "primary"} disabled={!resultsA && !resultsB} className="theorem-next-btn" onClick={next}>
+			Volgende
+		</Button>
 	);
 }
 
