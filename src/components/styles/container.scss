@@ -7,10 +7,13 @@
 	@include media("tablet") {
 		padding: 0px 55px;
 	}
+	@media only screen and (min-width: 120px) and (max-width: 1240px) {
+		padding: 0px 64px !important;
+	}
 	@include media("desktop") {
 		padding: 0px 138px;
 	}
 	@include media("large") {
-		padding: 0px 138px;
+		padding: 0px 220px;
 	}
 }
