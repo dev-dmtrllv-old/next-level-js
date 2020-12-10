@@ -18,8 +18,9 @@
 	& > .container {
 		height: 100%;
 		.body {
-			padding-top: 75px;
+			padding-top: 25px;
 			@include media("desktop", "large") {
+				padding-top: 75px;
 				@include dpr_media(1.25) {
 					padding-top: 35px;
 					.info-panel {
@@ -39,7 +40,6 @@
 				grid-column-gap: 15%;
 				grid-row-gap: 15%;
 				grid-template-columns: 1fr 1fr;
-				// margin-bottom: 30vh;
 
 				.btn-group {
 					order: 1;
