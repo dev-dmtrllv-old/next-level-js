@@ -18,6 +18,15 @@ h2 {
 	@include trenda("bold");
 }
 
+@include media("mobile", "tablet") {
+	h1 {
+		font-size: 20px;
+	}
+	h2 {
+		font-size: 16px;
+	}
+}
+
 @include media("desktop", "large") {
 	h1 {
 		font-size: 30px;
@@ -32,3 +41,4 @@ h2 {
 		}
 	}
 }
+
