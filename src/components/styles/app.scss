@@ -52,9 +52,15 @@
 				@include media("tablet", "mobile") {
 					grid-template-columns: 1fr;
 					grid-template-rows: 1fr;
+					grid-row-gap: 10%;
 
 					.btn-group {
 						order: unset;
+						height: 42px;
+						margin-bottom: 25px;
+						.theorem-points-btn {
+							height: 100%;
+						}
 					}
 				}
 			}
