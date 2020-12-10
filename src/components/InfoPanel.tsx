@@ -3,6 +3,8 @@ import React from "react"
 import { Heading } from "./Heading";
 import { Panel } from "./Panel";
 
+import "./styles/heading.scss";
+
 export const InfoPanel = () =>
 {
 	return (
