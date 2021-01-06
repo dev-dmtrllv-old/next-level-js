@@ -8,7 +8,7 @@ export const TheoremButtonGroup: React.FC<TheoremButtonGroupProps> = ({ target }
 {
 	return (
 		<View className="btn-group">
-			<View position="absolute" center="vertical" fill>
+			<View fill>
 			<FlexBox reversed={target === "A"} fill>
 				<FlexItem>
 					<TheoremPointsButton points={1} target={target} />
