@@ -10,6 +10,8 @@ import { TheoremResults } from "./TheoremResults";
 import { TheoremButtonGroup } from "./TheoremButtonGroup";
 import { InfoPanel } from "./InfoPanel";
 import { TrackList } from "./Tracklist";
+import { TimeUpModal } from "./TimeUpModal";
+import { TimerNotification } from "./TimerNotification";
 
 import "./styles/app.scss";
 
@@ -34,6 +36,7 @@ export const TheoremApp: React.FC = () =>
 		return (
 			<>
 				<View className="theorem-app">
+					<TimerNotification />
 					<Container>
 						<View className="body">
 							<InfoPanel />
@@ -49,6 +52,7 @@ export const TheoremApp: React.FC = () =>
 						</View>
 					</Container>
 				</View>
+				<TimeUpModal />
 				<TrackList />
 			</>
 		);

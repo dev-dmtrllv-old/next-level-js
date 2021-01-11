@@ -1,5 +1,5 @@
 import React from "react";
-import { TheoremPoints, TheoremResults, THEOREM_MAX_PAGES } from "data/theorem";
+import { TheoremPoints, TheoremResults, THEOREM_MAX_PAGES, THEOREM_MAX_TIME, THEOREM_NOTIFICATION_TIME } from "data/theorem";
 import { Storage } from "services/storage";
 import { clamp } from "utils/math";
 
@@ -15,9 +15,39 @@ export const TheoremProvider: React.FC = ({ children }) =>
 
 	const [currentPageID, setCurrentPageID] = React.useState<number>(Storage.getPageID());
 
+	const [showLeftTime, setShowLeftTime] = React.useState(false);
+	const [isTimeUp, setIsTimeUp] = React.useState(Storage.getLeftTime() === 0);
+
+	const timerInterval = React.useRef<NodeJS.Timeout>(null);
+
+	const startTimer = () =>
+	{
+		if (!timerInterval.current) 
+		{
+			let startTime = Storage.getLeftTime();
+			timerInterval.current = setInterval(() =>
+			{
+				const now = startTime--;
+				Storage.setTimerValue(now);
+				if (now === THEOREM_NOTIFICATION_TIME)
+				{
+					setShowLeftTime(true);
+				}
+				else if (now === 0)
+				{
+					clearInterval(timerInterval.current);
+					setIsTimeUp(true);
+				}
+			}, 1000);
+		}
+	}
+
 	const ctx: TheoremContextProps = {
 		updatePoints: (points, target) =>
 		{
+			if (isTimeUp)
+				return;
+
 			const clampedPoints = clamp(points, 0, 3) as TheoremPoints;
 			const oppositeTarget = target === "A" ? "B" : "A";
 			const newResults = {
@@ -33,25 +63,47 @@ export const TheoremProvider: React.FC = ({ children }) =>
 		next: () =>
 		{
 			const nextID = currentPageID + 1;
-			if (nextID <= THEOREM_MAX_PAGES)
+			if (nextID === 1) // we entered the first theorem page
 			{
-				setCurrentPageID(nextID);
-				Storage.setPageID(nextID);
+				startTimer();
 			}
-			else
+			else if (nextID === THEOREM_MAX_PAGES + 1) // we are passed the last page
 			{
-				setCurrentPageID(nextID)
-				Storage.setPageID(nextID);
-				console.log("finished", results);
+				clearInterval(timerInterval.current);
+			}
+			if (!isTimeUp)
+			{
+				if (nextID <= THEOREM_MAX_PAGES)
+				{
+					setCurrentPageID(nextID);
+					Storage.setPageID(nextID);
+				}
+				else
+				{
+					setCurrentPageID(nextID)
+					Storage.setPageID(nextID);
+					console.log("finished", results);
+				}
 			}
 		},
 		retry: () => 
 		{
+			timerInterval.current = null;
 			setCurrentPageID(0);
 			setResults({});
+			setIsTimeUp(false);
 			Storage.clear();
-		}
+		},
+		hideTimerNotification: () => setShowLeftTime(false),
+		showLeftTime,
+		isTimeUp,
 	};
+
+	React.useEffect(() =>
+	{
+		if (currentPageID > 0 && currentPageID < THEOREM_MAX_PAGES)
+			startTimer();
+	}, []);
 
 	return (
 		<TheoremContext.Provider value={ctx}>

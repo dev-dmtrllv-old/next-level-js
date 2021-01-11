@@ -1,9 +1,10 @@
-import { TheoremResults } from "data/theorem";
+import { TheoremResults, THEOREM_MAX_TIME } from "data/theorem";
 
 export namespace Storage
 {
 	const THEOREM_POINTS_KEY = "theorem_points";
 	const THEOREM_ID = "theorem_id";
+	const THEOREM_TIMER = "theorem_timer";
 
 	/**
 	 * @returns all the theorem results from storage
@@ -55,4 +56,19 @@ export namespace Storage
 	* @param id the last visited theorem page id
 	*/
 	export const setPageID = (id: number) => localStorage.setItem(THEOREM_ID, id.toString());
+
+	/**
+	 * @param time the remaining time
+	 */
+	export const setTimerValue = (time: number) => localStorage.setItem(THEOREM_TIMER, time.toString());
+
+	/**
+	 * @returns the remaining time
+	 */
+	export const getLeftTime = () => 
+	{
+		if(localStorage.getItem(THEOREM_TIMER) == null)
+			localStorage.setItem(THEOREM_TIMER, THEOREM_MAX_TIME.toString());
+		return +localStorage.getItem(THEOREM_TIMER);
+	};
 }
