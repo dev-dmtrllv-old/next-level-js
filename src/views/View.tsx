@@ -3,7 +3,7 @@ import { utils } from "../utils";
 
 import "./styles/view.scss";
 
-export const View = React.forwardRef<HTMLElement, WithReactProps<ViewProps>>(({ type = "div", children, className, position = "relative", center, fill, ...props }, ref) => 
+export const View: React.FC<WithReactProps<ViewProps>> = ({ type = "div", children, className, position = "relative", center, fill, ...props }) => 
 {
 	const cn = utils.react.getClassFromProps("view", {
 		[position || "relative"]: true,
@@ -12,8 +12,8 @@ export const View = React.forwardRef<HTMLElement, WithReactProps<ViewProps>>(({ 
 		className
 	});
 
-	return React.createElement(type, { ...props, ref, className: cn }, children);
-});
+	return React.createElement(type, { ...props, className: cn }, children);
+};
 
 export type WithViewProps<Props extends {}, T extends HTMLElement = HTMLElement> = WithReactProps<ViewProps & Props, T>;
 

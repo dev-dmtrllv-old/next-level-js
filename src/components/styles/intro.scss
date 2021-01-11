@@ -17,6 +17,7 @@
 		}
 
 		@include media("mobile") {
+			padding-top: 0px;
 			border: none;
 			background-color: transparent;
 		}

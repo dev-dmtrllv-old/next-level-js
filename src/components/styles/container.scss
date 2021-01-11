@@ -5,7 +5,9 @@
 		padding: 0px 20px;
 	}
 	@include media("tablet") {
-		padding: 0px 55px;
+		padding: 0px 40px;
+		max-width: 640px;
+		margin: 0 auto;
 	}
 	@include media("desktop") {
 		max-width: 960px;

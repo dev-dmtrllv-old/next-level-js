@@ -33,6 +33,9 @@
 			}
 			.info-panel {
 				margin-bottom: 5vh;
+				@include media("mobile") {
+					background-color: unset;
+				}
 			}
 
 			.app-grid {
@@ -43,30 +46,45 @@
 
 				.btn-group {
 					order: 1;
-
+					height: 42px;
 					.flex-item {
 						text-align: center;
 					}
 				}
 
 				@include media("tablet", "mobile") {
+					.btn-group:nth-child(1n) {
+						.flex-box {
+							flex-direction: row !important;
+						}
+					}
 					grid-template-columns: 1fr;
 					grid-template-rows: 1fr;
 					grid-row-gap: 10%;
 
 					.btn-group {
 						order: unset;
-						height: 42px;
 						margin-bottom: 25px;
-						.theorem-points-btn {
-							height: 100%;
-						}
+					}
+				}
+
+				@include media("mobile") {
+					grid-row-gap: 0px;
+					.btn-group {
+						margin-bottom: unset;
+						width: 70%;
+						left: 50%;
+						transform: translateX(-50%);
+						top: -34px;
 					}
 				}
 			}
 
 			.next-btn-wrapper {
-				margin-top: 80px;
+				margin-top: 95px;
+				@include media("mobile") {
+					margin-top: 10px;
+				}
 				text-align: center;
 			}
 		}
