@@ -23,7 +23,7 @@ export const TrackList = () =>
 							<Heading type="sub">{theoremPageID} / {THEOREM_MAX_PAGES}</Heading>
 						</View>
 					</FlexItem>
-					<FlexItem>
+					<FlexItem className="track-list-row">
 						<View center="vertical">
 							<FlexBox dir="horizontal" className="list">
 								{loopMap(THEOREM_MAX_PAGES, (i) => 

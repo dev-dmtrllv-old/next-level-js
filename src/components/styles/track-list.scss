@@ -1,4 +1,5 @@
 @import "src/var";
+@import "src/media";
 
 .track-list {
 	@include header_height;
@@ -7,9 +8,19 @@
 	.container {
 		height: 100%;
 	}
+	@include media("mobile") {
+		.track-list-row {
+			display: none;
+		}
+	}
+	
 	.list {
 		height: 13px;
 		column-gap: 15px;
+		@include media("tablet") {
+			column-gap: 7px;
+			height: 9px;
+		}
 		.flex-item {
 			border: 1px solid $grey;
 			transform: skew(-52deg);
