@@ -11,10 +11,8 @@
 	outline: none;
 	cursor: pointer;
 	box-shadow: 0 0 0px 0px #5e0b4f;
-
-	@include media("mobile") {
-		padding: 13px 120px;
-	}
+	white-space: nowrap;
+	max-width: 100%;
 
 	@include media("desktop", "large") {
 		@include dpr_media(1.25) {
