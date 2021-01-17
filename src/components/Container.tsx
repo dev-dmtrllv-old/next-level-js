@@ -11,6 +11,7 @@ export const Container: React.FC<ContainerProps> = ({ className, children, ...pr
 );
 
 type ContainerProps = {
+	id?: string;
 	className?: string;
 	fill?: boolean;
 };
