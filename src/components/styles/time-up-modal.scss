@@ -1,0 +1,18 @@
+@import "src/var";
+
+#time-up-modal {
+	left: 0;
+	top: 0;
+	background-color: rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(4px);
+	.modal {
+		width: 75%;
+		.panel {
+			background-color: $purple;
+			color: white !important;
+			.body {
+				padding: 15px 0px;
+			}
+		}
+	}
+}
