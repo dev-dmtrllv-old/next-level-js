@@ -15,6 +15,7 @@ export type TheoremContextProps = {
 	showLeftTime: boolean;
 	isTimeUp: boolean;
 	hideTimerNotification: () => void;
+	toResults: () => void;
 };
 
 export type TheoremTarget = "A" | "B";

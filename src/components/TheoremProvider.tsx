@@ -49,12 +49,15 @@ export const TheoremProvider: React.FC = ({ children }) =>
 				return;
 
 			const clampedPoints = clamp(points, 0, 3) as TheoremPoints;
+
 			const oppositeTarget = target === "A" ? "B" : "A";
+
 			const newResults = {
 				...results,
 				[`${currentPageID}${target}`]: clampedPoints,
 				[`${currentPageID}${oppositeTarget}`]: (3 - clampedPoints) as TheoremPoints
 			}
+
 			setResults(newResults);
 			Storage.setTheoremResults(newResults);
 		},
@@ -97,6 +100,12 @@ export const TheoremProvider: React.FC = ({ children }) =>
 		hideTimerNotification: () => setShowLeftTime(false),
 		showLeftTime,
 		isTimeUp,
+		toResults: () =>
+		{
+			const resultsPageId = THEOREM_MAX_PAGES + 1;
+			setCurrentPageID(resultsPageId);
+			Storage.setPageID(resultsPageId);
+		}
 	};
 
 	React.useEffect(() =>
