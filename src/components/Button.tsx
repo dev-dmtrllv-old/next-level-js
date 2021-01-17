@@ -26,5 +26,5 @@ export const Button: React.FC<ButtonProps> = ({ disabled, type, onClick, classNa
 
 type ButtonProps = WithReactProps<{
 	disabled?: boolean;
-	type: "primary" | "secundary";
+	type: "primary" | "secundary" | "tertiary";
 }, HTMLButtonElement>;
