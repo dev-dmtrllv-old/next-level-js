@@ -51,8 +51,8 @@ export const TheoremApp: React.FC = () =>
 							</View>
 						</View>
 					</Container>
+					<TimeUpModal />
 				</View>
-				<TimeUpModal />
 				<TrackList />
 			</>
 		);
