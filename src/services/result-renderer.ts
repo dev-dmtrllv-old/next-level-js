@@ -100,6 +100,19 @@ export const renderResults = (x: number, y: number) =>
 
 	let color = "";
 
+
+	// clamp both ways (positive as well as negative)
+	if (x < 0 && x > -14)
+		x = -14;
+	else if (x > 0 && x < 14)
+		x = 14;
+
+	if (y < 0 && y > -14)
+		y = -14;
+	else if (y > 0 && y < 13)
+		y = 14;
+
+
 	// compute color
 	if (x < 0 && y > 0)
 		color = "yellow";
@@ -111,7 +124,7 @@ export const renderResults = (x: number, y: number) =>
 		color = "blue";
 
 	ctx.strokeStyle = "purple";
-	
+
 	const range = 13;
 	const step = half / (range + 1);
 
@@ -124,7 +137,7 @@ export const renderResults = (x: number, y: number) =>
 		y = -((y + range) * step) + half;
 	else
 		y = -((y - range) * step) + half;
-	
+
 	ctx.beginPath();
 	ctx.arc(x, y, 10, 0, 2 * Math.PI);
 	ctx.lineWidth = 8;

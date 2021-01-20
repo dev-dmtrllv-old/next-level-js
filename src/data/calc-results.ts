@@ -3,10 +3,15 @@ import { TheoremResults, THEOREM_MAX_PAGES } from "./theorem";
 
 export const calculateResults = (results: TheoremResults) =>
 {
+	console.log(results);
+
 	let O = 0;
 	let G = 0;
 	let D = 0;
 	let I = 0;
+
+	let lastOG: "O" | "G" = "O";
+	let lastID: "I" | "D" = "D";
 
 	for (let i = 1; i <= THEOREM_MAX_PAGES; i++)
 	{
@@ -21,11 +26,13 @@ export const calculateResults = (results: TheoremResults) =>
 				{
 					D += a;
 					I += b;
+					lastID = a > b ? "D" : "I";
 				}
 				else // 2, 6, 10, 14 etc ()
 				{
 					D += b;
 					I += a;
+					lastID = a > b ? "I" : "D";
 				}
 			}
 			else // odd means target (o or g)
@@ -34,11 +41,13 @@ export const calculateResults = (results: TheoremResults) =>
 				{
 					G += a;
 					O += b;
+					lastOG = a > b ? "G" : "O";
 				}
 				else // 1, 5, 9, 13 etc
 				{
 					G += b;
 					O += a;
+					lastOG = a > b ? "O" : "G";
 				}
 			}
 		}
@@ -58,6 +67,15 @@ export const calculateResults = (results: TheoremResults) =>
 		x = -D;
 
 	let type = "";
+
+	// extrapolation fix for zero cases
+	{
+		if (x === 0)
+			x = lastID === "D" ? 13 : -13;
+
+		if (y === 0)
+			y = lastOG === "G" ? -13 : 13;
+	}
 
 	if (x < 0 && y < 0)
 	{
