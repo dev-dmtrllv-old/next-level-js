@@ -1,12 +1,11 @@
 import React from "react";
-import { FlexBox, FlexItem, View } from "views";
+
+import { FlexBox, FlexItem, View, Container, Heading } from "views";
 import { THEOREM_MAX_PAGES } from "data/theorem";
 import { loopMap } from "utils/array";
 import { getClassFromProps } from "utils/react";
 
-import { Container } from "./Container";
 import { TheoremContext } from "./TheoremContext";
-import { Heading } from "./Heading";
 
 import "./styles/track-list.scss";
 

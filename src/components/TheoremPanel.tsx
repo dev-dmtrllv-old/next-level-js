@@ -1,10 +1,10 @@
-import { theorems } from "data/theorem";
 import React from "react";
-import { FlexBox, FlexItem, View } from "views";
-import { TheoremPointsButton } from "./TheoremPointsButton";
+
+import { View, Heading } from "views";
+import { theorems } from "data/theorem";
+
 import { TheoremContext } from "./TheoremContext";
 import { Panel } from "./Panel";
-import { Heading } from "./Heading";
 
 import "./styles/theorem-panel.scss";
 

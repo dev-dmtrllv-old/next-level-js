@@ -1,9 +1,10 @@
 import React from "react";
+
 import { TheoremPoints } from "data/theorem";
 import { getClassFromProps } from "utils/react";
-import { View } from "views";
+import { View, Heading } from "views";
+
 import { TheoremContext, TheoremTarget } from "./TheoremContext";
-import { Heading } from "./Heading";
 
 import "./styles/theorem-points-btn.scss";
 

@@ -1,6 +1,7 @@
 import React from "react";
-import { View } from "views";
-import { Container } from "./Container";
+
+import { View, Container } from "views";
+
 import { Logo } from "./Logo";
 import { TheoremContext } from "./TheoremContext";
 

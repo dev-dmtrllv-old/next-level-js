@@ -1,7 +1,8 @@
 import React from "react";
-import { View, FlexBox, FlexItem } from "views";
-import { TheoremTarget } from "./TheoremContext";
 
+import { View, FlexBox, FlexItem } from "views";
+
+import { TheoremTarget } from "./TheoremContext";
 import { TheoremPointsButton } from "./TheoremPointsButton";
 
 export const TheoremButtonGroup: React.FC<TheoremButtonGroupProps> = ({ target }) =>

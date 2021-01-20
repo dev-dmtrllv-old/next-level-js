@@ -1,7 +1,8 @@
 import React from "react";
+
 import { THEOREM_MAX_PAGES } from "data/theorem";
-import { View } from "views";
-import { Container } from "./Container";
+import { View, Container } from "views";
+
 import { TheoremPanel } from "./TheoremPanel";
 import { TheoremContext } from "./TheoremContext";
 import { TheoremIntro } from "./TheoremIntro";

@@ -41,10 +41,10 @@ export const info = "Verdeel 3 punten over de 2 stellingen die het beste bij jou
 
 export const THEOREM_MAX_PAGES = Object.keys(theorems).length / 2;
 
-export const THEOREM_MAX_TIME = 20; // 20 min
-// export const THEOREM_MAX_TIME = 20 * 60; // 20 min
+// export const THEOREM_MAX_TIME = 20; // 20 sec
+export const THEOREM_MAX_TIME = 60 * 20; // 20 min
 
-export const THEOREM_NOTIFICATION_TIME = 10; // 5 min
+export const THEOREM_NOTIFICATION_TIME = 60 * 5; // 5 min
 
 export type TheoremResults = {
 	[id: string]: TheoremPoints;

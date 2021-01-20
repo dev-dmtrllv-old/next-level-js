@@ -1,11 +1,9 @@
 import React from "react";
-import { FlexBox, FlexItem, View } from "views";
 
-import { Container } from "./Container";
+import { FlexBox, FlexItem, View, Container, Heading, Button } from "views";
+
 import { Panel } from "./Panel";
 import { TheoremContext } from "./TheoremContext";
-import { Heading } from "./Heading";
-import { Button } from "./Button";
 
 import "./styles/intro.scss";
 

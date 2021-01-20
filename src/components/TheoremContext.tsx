@@ -1,5 +1,6 @@
-import { TheoremPoints, TheoremResults } from "data/theorem";
 import React from "react";
+
+import { TheoremPoints, TheoremResults } from "data/theorem";
 
 /**
  * This is the context that will provide all the functionality to update and retrieve data from the theorems state

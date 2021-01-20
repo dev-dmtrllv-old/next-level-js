@@ -1,5 +1,6 @@
 import React from "react";
-import { TheoremPoints, TheoremResults, THEOREM_MAX_PAGES, THEOREM_MAX_TIME, THEOREM_NOTIFICATION_TIME } from "data/theorem";
+
+import { TheoremPoints, TheoremResults, THEOREM_MAX_PAGES, THEOREM_NOTIFICATION_TIME } from "data/theorem";
 import { Storage } from "services/storage";
 import { clamp } from "utils/math";
 

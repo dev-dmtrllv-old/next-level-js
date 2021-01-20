@@ -1,7 +1,10 @@
 import React from "react";
+
 import { TheoremPoints } from "data/theorem";
+
 import { TheoremContext } from "./TheoremContext";
-import { Button } from "./Button";
+
+import { Button } from "views/Button";
 
 export const TheoremNextButton: React.FC = () =>
 {
