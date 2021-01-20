@@ -92,6 +92,7 @@ export const TheoremProvider: React.FC = ({ children }) =>
 		},
 		retry: () => 
 		{
+			clearInterval(timerInterval.current);
 			timerInterval.current = null;
 			setCurrentPageID(0);
 			setResults({});
