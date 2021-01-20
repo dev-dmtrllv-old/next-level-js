@@ -29,11 +29,15 @@ export const TheoremIntro = () =>
 						</FlexBox>
 					))}
 					<View className="btn-group">
-						<Button type="secundary">
-							Ga terug
+						<Button type="secundary" onClick={() => window.history.back()}>
+							<View position="absolute" center>
+								Terug
+							</View>
 						</Button>
 						<Button type="primary" onClick={next}>
-							Volgende
+							<View position="absolute" center>
+								Volgende
+							</View>
 						</Button>
 					</View>
 				</Panel>

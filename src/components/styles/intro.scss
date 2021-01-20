@@ -48,11 +48,17 @@
 			.btn.primary {
 				float: right;
 			}
+			.btn {
+				width: 45%;
+				height: 48px;
+			}
 			@include media("mobile") {
 				text-align: center;
 				.btn {
 					float: unset !important;
 					margin-bottom: 15px;
+					display: inline-block;
+					width: 80%;
 
 					// margin-left: 50%;
 					// transform: translateX(-50%);

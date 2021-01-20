@@ -2,6 +2,7 @@
 @import "src/media";
 
 .btn {
+	position: relative;
 	border-radius: $btn-radius;
 	border: 1px solid $purple;
 	transition: 150ms;
