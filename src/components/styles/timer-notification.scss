@@ -1,0 +1,61 @@
+@import "src/var";
+@import "src/media";
+
+#timer-notification {
+	width: 100%;
+	top: -64px;
+	transition: top 650ms;
+	&.show {
+		top: 0px;
+	}
+	.inner-notification {
+		height: 64px;
+		width: 100%;
+		border: 0px;
+		border-radius: 0px;
+		border-bottom-left-radius: 6px;
+		border-bottom-right-radius: 6px;
+		background-color: $purple;
+		z-index: 100;
+		color: white !important;
+
+		@include media("tablet") {
+			height: 52px;
+		}
+
+		.btn-close {
+			width: 28px;
+			height: 28px;
+			border-radius: 6px;
+			border: 1px solid $light-grey;
+			right: 15px;
+			opacity: 0.8;
+			transition: opacity 150ms;
+			cursor: pointer;
+			.inner-btn {
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					width: 19px;
+					height: 3px;
+					border-radius: 5px;
+					background-color: $light-grey;
+					left: -9px;
+					top: -1px;
+				}
+				&::before {
+					transform: rotate(45deg);
+				}
+
+				&::after {
+					transform: rotate(-45deg);
+				}
+			}
+			&:hover {
+				opacity: 1;
+			}
+			// top: 0;
+		}
+	}
+}
