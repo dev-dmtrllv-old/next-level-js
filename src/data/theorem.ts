@@ -37,14 +37,23 @@ export const theorems: TheoremTextData = {
 	"18B": "Op conflicten reageer ik meestal snel en direct.",
 };
 
+export const introPoints = [
+	"Kies vooraf een duidelijke context, zoals ‘mijn functioneren op mijn werk’ of ‘mijn functioneren in mijn gezin’. De context kan namelijk invloed hebben op je gedrag.",
+	"Vul de antwoorden uit de test vanuit deze context in. In bewering 1A staat bijvoorbeeld ‘ik maak gemakkelijk contact met mensen’. Vul dan “mensen” in vanuit jouw context, bijvoorbeeld collega’s, ouders, kinderen.",
+	"Vul de vragen in vanuit je huidige daadwerkelijke gedrag ‘dit doe ik in deze specifieke context’ en niet vanuit je wenselijke gedrag ’ik zou graag willen dat ik het zo deed’.",
+	"Wees toeschouwer van jezelf. Bekijk jezelf gerust van een afstand, alsof je jezelfziet op een televisiescherm. Wat doe je dan? Wat zie je, hoor je? Vul vanuit deze ‘neutrale positie’ als toeschouwer de test in.",
+	"Er is geen goed of fout. Het allerbelangrijkste is het antwoord dat je geeft oprecht het best passende antwoord voor jou is. Tip: het eerste dat bij je opkomt is."
+];
+
 export const info = "Verdeel 3 punten over de 2 stellingen die het beste bij jou passen. Als je 2 punten aan de ene stelling geeft gaat er automatisch 1 punt naar de andere stelling.";
 
 export const THEOREM_MAX_PAGES = Object.keys(theorems).length / 2;
 
-// export const THEOREM_MAX_TIME = 20; // 20 sec
-export const THEOREM_MAX_TIME = 60 * 20; // 20 min
+export const THEOREM_MAX_TIME = 60 * 2; // 20 sec
+// export const THEOREM_MAX_TIME = 60 * 20; // 20 min
 
-export const THEOREM_NOTIFICATION_TIME = 60 * 5; // 5 min
+// export const THEOREM_NOTIFICATION_TIME = 60 * 5; // 5 min
+export const THEOREM_NOTIFICATION_TIME = 60; // 5 min
 
 export type TheoremResults = {
 	[id: string]: TheoremPoints;
