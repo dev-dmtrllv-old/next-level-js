@@ -12,11 +12,12 @@
 	cursor: pointer;
 
 	h1 {
-		font-size: 22px;
+		@include media("large") {
+			font-size: 22px;
+		}
 		@include media("desktop") {
 			font-size: 18px !important;
 		}
-		
 	}
 
 	&.active {
