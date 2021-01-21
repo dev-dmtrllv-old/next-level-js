@@ -11,7 +11,7 @@ $header-h-tablet: 92px;
 $header-h-desktop: 102px;
 $header-h-large: 120px;
 
-
+// fix for importing correct font
 @mixin trenda($weight: "normal") {
 	@if ($weight == "normal") {
 		font-family: "trenda", sans-serif;
