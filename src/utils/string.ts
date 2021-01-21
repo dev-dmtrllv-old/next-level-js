@@ -5,7 +5,7 @@ export const toSnakeCase = (str: string, sep: string = "-") => str.split("").map
 	return p;
 }).join("").toLowerCase();
 
-export const capitalize = (str: string) => str[0].toUpperCase() + str.substr(1, str.length);
+export const capitalize = (str: string) => str ? (str[0].toUpperCase() + str.substr(1, str.length)) : "";
 
 export const toCamelCase = (str: string, cap: boolean = true) => 
 {
