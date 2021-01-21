@@ -3,8 +3,6 @@ import { TheoremResults, THEOREM_MAX_PAGES } from "./theorem";
 
 export const calculateResults = (results: TheoremResults) =>
 {
-	console.log(results);
-
 	let O = 0;
 	let G = 0;
 	let D = 0;
