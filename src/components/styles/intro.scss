@@ -3,10 +3,8 @@
 
 #theorem-intro {
 	padding-top: 75px;
-	@include dpr_media(1.25)
-	{
+	@include dpr_media(1.25) {
 		padding-top: 45px;
-
 	}
 	.panel {
 		h1 {
@@ -49,8 +47,12 @@
 				float: right;
 			}
 			.btn {
-				width: 45%;
+				width: 240px;
 				height: 48px;
+				@include media("mobile", "tablet") {
+					width: 45%;
+					height: 48px;
+				}
 			}
 			@include media("mobile") {
 				text-align: center;
@@ -58,7 +60,7 @@
 					float: unset !important;
 					margin-bottom: 15px;
 					display: inline-block;
-					width: 80%;
+					width: 80% !important;
 
 					// margin-left: 50%;
 					// transform: translateX(-50%);
