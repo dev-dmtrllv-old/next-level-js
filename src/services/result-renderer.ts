@@ -19,11 +19,14 @@ export const renderResults = (x: number, y: number) =>
 
 	const canvas = document.createElement("canvas");
 
-	canvas.width = canvas.height = size + (margin * 2);
-	canvas.style.width = canvas.style.height = `${size + (margin * 2)}px`;
+	const totalSize = size + margin * 2;
+
+	canvas.width = canvas.height = totalSize;
+	canvas.style.width = canvas.style.height = `${totalSize}px`;
 
 	const ctx = canvas.getContext("2d");
-
+	ctx.fillStyle = "white";
+	ctx.fillRect(0, 0, totalSize, totalSize);
 	ctx.translate(20, 20);
 
 	ctx.getImageData(0, 0, size, size);
