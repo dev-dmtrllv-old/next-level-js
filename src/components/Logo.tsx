@@ -9,7 +9,9 @@ export const Logo = () =>
 {
 	return (
 		<View className="logo">
-			<img src={LogoImg} alt="logo"/>
+			<a href="https://www.werk30.nl">
+				<img src={LogoImg} alt="logo" />
+			</a>
 		</View>
 	)
 }
