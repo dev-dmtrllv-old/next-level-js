@@ -12,9 +12,21 @@
 		background-color: white;
 		top: 0;
 		box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
-
 		.logo {
 			height: 100%;
+		}
+		@include media("mobile") {
+			.logo {
+				text-align: center;
+				img {
+					padding: 0px;
+				}
+			}
+		}
+		@include media("tablet") {
+			.logo img {
+				padding: 10px 0px;
+			}
 		}
 	}
 }
