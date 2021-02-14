@@ -49,11 +49,11 @@ export const info = "Verdeel 3 punten over de 2 stellingen die het beste bij jou
 
 export const THEOREM_MAX_PAGES = Object.keys(theorems).length / 2;
 
-export const THEOREM_MAX_TIME = 60 * 2; // 20 sec
-// export const THEOREM_MAX_TIME = 60 * 20; // 20 min
+// export const THEOREM_MAX_TIME = 60 * 2; // 20 sec
+export const THEOREM_MAX_TIME = 60 * 20; // 20 min
 
-// export const THEOREM_NOTIFICATION_TIME = 60 * 5; // 5 min
-export const THEOREM_NOTIFICATION_TIME = 60; // 5 min
+// export const THEOREM_NOTIFICATION_TIME = 60; // 5 min
+export const THEOREM_NOTIFICATION_TIME = 60 * 5; // 5 min
 
 export type TheoremResults = {
 	[id: string]: TheoremPoints;
@@ -64,3 +64,106 @@ export type TheoremTextData = {
 };
 
 export type TheoremPoints = 0 | 1 | 2 | 3;
+
+export const resultInfoPoints = [
+	"Sterke kanten",
+	"Zwakke kanten",
+	"Irritatie",
+	"Doelen ",
+	"Angst",
+	"Motivatie & eigenwaarde",
+	"Primaire bijdrage",
+	"Stressreactie ",
+	"Leerpunten",
+	"Gedijt goed in een klimaat dat",
+	"Benadering",
+	"Ondersteun hen door",
+	"Stemgebruik",
+	"Gevoelens",
+	"Help hen",
+	"Risico's",
+	"Neemt beslissingen op basis van",
+	"Wijs hen op punten die aangeven",
+];
+
+export const regissuerPoints = [
+	"Initiatief nemen",
+	"Ongeduldig, Ongevoelig",
+	"Besluiteloosheid",
+	"Productiviteit, Controle",
+	"Bedrog",
+	"Winnen en macht",
+	"Voortgang bewaken",
+	"Doordrukken",
+	"Luisteren naar anderen",
+	"Ruimte schept",
+	"Ben efficiënt",
+	"Conclusies en acties				",
+	"Hoog volume, monotoon en staccato",
+	"Houdt gevoelens voor zichzelf",
+	"Tijd/geld besparen",
+	"Neemt risico's	",
+	"Opties en uitspraken over resultaten en kansen",
+	"Wat het resultaat van de oplossing zal zijn",
+];
+
+export const motivatorPoints = [
+	"Overtuiging persoonlijke interactie",
+	"Ongeorganiseerd, Zorgeloosheid",
+	"Routine",
+	"Populariteit, Applaus",
+	"Prestigeverlies",
+	"Erkenning en goedkeuring",
+	"Energie opwekken",
+	"Aanvallen",
+	"Checken",
+	"Inspireert",
+	"Ben interessant",
+	"Inzichten en ingevingen",
+	"Hoogvolume, wisselende toonhoogtes",
+	"Deelt gemakkelijk gevoelens",
+	"Inzet te doseren",
+	"Neemt risico’s",
+	"Voorbeelden en aanmoedigingspremies",
+	"Waar het uiteindelijk om gaat",
+];
+
+export const zorgerPoints = [
+	"Servicegerichtheid, luisteren",
+	"Overgevoeligheid, Besluiteloosheid",
+	"Ongevoeligheid",
+	"Acceptatie, Stabiliteit",
+	"Plotselinge verandering",
+	"Betrokkenheid en goedkeuring",
+	"Verbinden",
+	"Berusten",
+	"Initiatief nemen",
+	"Mogelijkheden biedt",
+	"Ben coöperatief",
+	"Relaties en gevoelens",
+	"Laag volume, wisselende toonhoogtes",
+	"Deelt gemakkelijk gevoelens",
+	"Relaties te behouden",
+	"Vermijdt risico’s			",
+	"Garanties en toezeggingen",
+	"Wie meedoet",
+];
+
+export const analyticusPoints = [
+	"Planning Analyse",
+	"Perfectionisme, Overdreven kritisch",
+	"Accuratessem, Gedegenheid",
+	"Structuur en respect",
+	"aanbrengen",
+	"Vermijden",
+	"Sneller beslissingen nemen",
+	"Informeert en beschrijft",
+	"Ben accuraat",
+	"Principes en denkbeelden",
+	"Laag volume, monotoon",
+	"gevoelens voor zichzelf",
+	"gezicht te redden",
+	"Vermijdt risico’s",
+	"Bewijsmateriaal en service",
+	"probleem wordt opgelost`",
+];

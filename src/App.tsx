@@ -48,4 +48,4 @@ const autoRun = () =>
 	}, 500);
 }
 
-// autoRun();
+autoRun();
