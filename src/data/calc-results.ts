@@ -1,8 +1,11 @@
 import { capitalize } from "utils/string";
 import { TheoremResults, THEOREM_MAX_PAGES } from "./theorem";
 
-export const calculateResults = (results: TheoremResults) =>
+export const calculateResults = (results: TheoremResults | null) =>
 {
+	if(Object.keys(results).length <= 0)
+		return { x: null, y: null };
+
 	let O = 0;
 	let G = 0;
 	let D = 0;

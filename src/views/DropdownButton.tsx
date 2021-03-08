@@ -14,25 +14,27 @@ export const DropdownButton: React.FC<DropdownButtonProps> = ({ className, items
 
 	React.useEffect(() => 
 	{
-		const fn = () => { console.log(isShown); if(isShown) setShown(false); }
+		const fn = () => { if (isShown) setShown(false); }
 		window.addEventListener("click", fn);
 		return () => window.removeEventListener("click", fn);
 	}, [isShown]);
 
-	
+
 
 	React.useEffect(() => 
 	{
 		window.document.body.style.overflow = "hidden";
-		return () => 
-		{
-			window.document.body.style.overflow = "hidden";
-		};
+		return () => { window.document.body.style.overflow = "hidden"; };
 	}, []);
 
 	return (
 		<Button type="secundary" className={getClassFromProps("dropdown-btn", { className, isShown })} onClick={handleClick}>
-			{items[activeIndex].text} &#9947;
+			{items[activeIndex].text}
+			<View position="relative" className="icon">
+				<View position="absolute" center="vertical">
+					<i className="fas fa-sort-down"></i>
+				</View>
+			</View>
 			<View position="absolute" className="dropdown">
 				{items.map((item, i) => 
 				{
@@ -40,10 +42,10 @@ export const DropdownButton: React.FC<DropdownButtonProps> = ({ className, items
 						return null;
 
 					return (
-						<View className="item" key={i} onClick={() => { setActiveIndex(i); item.action();  }}>
+						<View className="item" key={i} onClick={() => { setActiveIndex(i); item.action(); }}>
 							{item.text}
 						</View>
-					)
+					);
 				})}
 			</View>
 		</Button>

@@ -45,14 +45,12 @@ export const introPoints = [
 	"Er is geen goed of fout. Het allerbelangrijkste is het antwoord dat je geeft oprecht het best passende antwoord voor jou is. Tip: het eerste dat bij je opkomt is."
 ];
 
-export const info = "Verdeel 3 punten over de 2 stellingen die het beste bij jou passen. Als je 2 punten aan de ene stelling geeft gaat er automatisch 1 punt naar de andere stelling.";
+export const info = "Verdeel 3 punten over de 2 stellingen die het beste bij jou passen. De overgebleven punten worden automatisch bij de andere stelling neergezet.";
 
 export const THEOREM_MAX_PAGES = Object.keys(theorems).length / 2;
 
-// export const THEOREM_MAX_TIME = 60 * 2; // 20 sec
 export const THEOREM_MAX_TIME = 60 * 20; // 20 min
 
-// export const THEOREM_NOTIFICATION_TIME = 60; // 5 min
 export const THEOREM_NOTIFICATION_TIME = 60 * 5; // 5 min
 
 export type TheoremResults = {
@@ -65,15 +63,17 @@ export type TheoremTextData = {
 
 export type TheoremPoints = 0 | 1 | 2 | 3;
 
+export type TheoremTypes = "regisseur" | "analyticus" | "zorger" | "motivator";
+
 export const resultInfoPoints = [
 	"Sterke kanten",
 	"Zwakke kanten",
 	"Irritatie",
-	"Doelen ",
+	"Doelen",
 	"Angst",
 	"Motivatie & eigenwaarde",
 	"Primaire bijdrage",
-	"Stressreactie ",
+	"Stressreactie",
 	"Leerpunten",
 	"Gedijt goed in een klimaat dat",
 	"Benadering",
@@ -98,7 +98,7 @@ export const regissuerPoints = [
 	"Luisteren naar anderen",
 	"Ruimte schept",
 	"Ben efficiënt",
-	"Conclusies en acties				",
+	"Conclusies en acties",
 	"Hoog volume, monotoon en staccato",
 	"Houdt gevoelens voor zichzelf",
 	"Tijd/geld besparen",
@@ -144,7 +144,7 @@ export const zorgerPoints = [
 	"Laag volume, wisselende toonhoogtes",
 	"Deelt gemakkelijk gevoelens",
 	"Relaties te behouden",
-	"Vermijdt risico’s			",
+	"Vermijdt risico’s",
 	"Garanties en toezeggingen",
 	"Wie meedoet",
 ];
@@ -165,5 +165,59 @@ export const analyticusPoints = [
 	"gezicht te redden",
 	"Vermijdt risico’s",
 	"Bewijsmateriaal en service",
-	"probleem wordt opgelost`",
+	"probleem wordt opgelost",
 ];
+
+
+export const getCommunicationInfo = (target: TheoremTypes) =>
+{
+	switch(target)
+	{
+		case "analyticus":
+			return [
+				"Bereid u zeer goed voor en zorg voor feitelijke onderbouwing.",
+				"Setl in het begin geen persoonlijke vragen, bewaar afstand.",
+				"Geed de ander de tijd om te analyseren of om een correct antwoord te vinden.",
+				"wees op tijd en voorkom een nonchalante of informele indruk.",
+				"Geef zoveel mogelijk informatie schriftelijk, laat de ander beoordelen.",
+				"Houd zelf de regie.",
+				"Maak duidelijke afspraken en kom deze na.",
+				"Bied ruimte om na te denken, dring niet teveel aan."
+			];
+		case "motivator":
+			return [
+				"Zorg voor een vriendelijke en gezellige sfeer.",
+				"Treed in verbinding en ga in gesprek. Toon uw betrokkenheid.",
+				"Laat iets van uzelf zien.",
+				"Concentreer op het totaalplaatje.",
+				"Toon interesse, stel veel vragen en luister actief.",
+				"Help de ander overzicht te krijgen, doe het waar nodig samen.",
+				"Laat blijken dat u de ander aardig vindt, waardeert en goedkeurt.",
+				"vermijd detail (geef deze schriftelijk).",
+				"zorg voor een concreet vervolg."
+			];
+		case "regisseur":
+			return [
+				"Wees goed voorbereid en zorg dat u uw informatie paraat hebt.",
+				"Richt u op de hoofdlijnen.",
+				"Wees kort en 'to the point', vermijd wollig en vaag taalgebruik.",
+				"Argumenteer met feiten, presenteer deze in logische en overzichtelijke volgorde.",
+				"Laat zien hoe de ander kan winnen. Creeer kansen en daag uit het spel te spelen.",
+				"Stem met elkaar concrete doelen af. Laat de ander het 'hoe' bepalen.",
+				"Erken hetgeen de ander bereikt heeft, complimenteer.",
+				"Geef ruimte en toestemming om zelfstandig te beslissen, geef daarbij kaders mee."
+			];
+			
+		case "zorger":
+			return [
+				"Zoek het juiste moment en creéer een ontspannen sfeer.",
+				"Kom niet gelijk ter zake.",
+				"Start met persoonlijke opmerking, toon interesse in de anders familie.",
+				"Praat met rustige gelijkmatige stem, voorkom stemverheffing.",
+				"Laat zien dat u oprecht geinteresseerd bent, luister goed en vraag door.",
+				"Bereid de ander voor, neem hem mee in wat gaat gebeuren.",
+				"Geef de ander bedenktijd wanneer u een reactie vraagt.",
+				"Maak de ander duidelijk hoe uw voorstel risico's beperkt of uitsluit.",
+			];
+	}
+}

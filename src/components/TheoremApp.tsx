@@ -24,7 +24,7 @@ export const TheoremApp: React.FC = () =>
 	{
 		return (
 			<TheoremIntro />
-		)
+		);
 	}
 	else if (theoremPageID > THEOREM_MAX_PAGES) // app was finished
 	{

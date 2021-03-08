@@ -1,5 +1,8 @@
 export const renderResults = (x: number, y: number) => 
 {
+	if(!x || !y)
+		return null;
+		
 	const size = 1500;
 	const margin = 20;
 
@@ -132,14 +135,14 @@ export const renderResults = (x: number, y: number) =>
 	const step = half / (range + 1);
 
 	if (x < 0)
-		x = ((x + range + 1) * step) + half;
+		x = ((x + range) * step) + half;
 	else
-		x = ((x - range + 1) * step) + half;
+		x = ((x - range) * step) + half;
 
 	if (y < 0)
-		y = -((y + range + 1) * step) + half;
+		y = -((y + range) * step) + half;
 	else
-		y = -((y - range + 1) * step) + half;
+		y = -((y - range) * step) + half;
 
 	ctx.beginPath();
 	ctx.arc(x, y, 10, 0, 2 * Math.PI);

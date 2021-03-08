@@ -86,7 +86,6 @@ export const TheoremProvider: React.FC = ({ children }) =>
 				{
 					setCurrentPageID(nextID)
 					Storage.setPageID(nextID);
-					console.log("finished", results);
 				}
 			}
 		},
@@ -109,6 +108,8 @@ export const TheoremProvider: React.FC = ({ children }) =>
 			Storage.setPageID(resultsPageId);
 		}
 	};
+
+	(window as any).__RESET__ = ctx.retry;
 
 	React.useEffect(() =>
 	{

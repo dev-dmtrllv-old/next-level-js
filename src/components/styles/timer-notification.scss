@@ -2,11 +2,14 @@
 @import "src/media";
 
 #timer-notification {
-	width: 100%;
+	width: 0px;
+	overflow: hidden;
 	top: -64px;
-	transition: top 650ms;
+	transition: top 650ms, width 0ms 650ms;
 	&.show {
+		width: 100%;
 		top: 0px;
+		transition: top 650ms, width 0ms;
 	}
 	.inner-notification {
 		height: 64px;

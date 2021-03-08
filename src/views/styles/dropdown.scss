@@ -1,4 +1,4 @@
-@import "src/var"; 
+@import "src/var";
 
 .dropdown-btn {
 	&:focus {
@@ -22,12 +22,26 @@
 			padding: 8px 0px;
 			opacity: 0.7;
 			transition: 150ms;
-			&:hover{
+			&:hover {
 				opacity: 1;
 			}
 		}
 	}
-	&.is-shown .dropdown{
+
+	&.is-shown .dropdown {
 		display: block;
+	}
+
+	.icon {
+		display: inline-block;
+		vertical-align: top;
+		width: 50px;
+		& > .view {
+			right: 0;
+			top: 4px;
+			& > i {
+				font-size: 26px;
+			}
+		}
 	}
 }

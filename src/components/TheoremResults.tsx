@@ -1,13 +1,17 @@
 import React from "react";
 
 import { calculateResults } from "data/calc-results";
-import { analyticusPoints, motivatorPoints, regissuerPoints, resultInfoPoints, zorgerPoints } from "data/theorem";
+import { analyticusPoints, getCommunicationInfo, motivatorPoints, regissuerPoints, resultInfoPoints, TheoremTypes, zorgerPoints } from "data/theorem";
 import { renderResults } from "services/result-renderer";
-import { downloadPdf } from "services/pdf";
 
-import { DropdownButton, FlexBox, FlexItem, View, Container, Heading, DropdownItem } from "views";
+import { ResultGridRenderer } from "./ResultGridRenderer";
+import { Panel } from "./Panel";
+import { getClassFromProps } from "utils/react";
+
+import { DropdownButton, FlexBox, FlexItem, View, Container, Heading, DropdownItem, Button } from "views";
 
 import { TheoremContext } from "./TheoremContext";
+import { downloadPdf } from "services/pdf";
 
 import "./styles/theorem-results.scss";
 
@@ -43,6 +47,8 @@ const getInitIndex = (target: string) =>
 
 const translateColor = (color: string) =>
 {
+	if (!color)
+		return "";
 	switch (color.toLowerCase())
 	{
 		case "green":
@@ -56,19 +62,22 @@ const translateColor = (color: string) =>
 	}
 }
 
-
 export const TheoremResults = () =>
 {
 	const { results, retry } = React.useContext(TheoremContext);
+	
 	const resultsRef = React.useRef(calculateResults(results));
 
 	const renderRef = React.useRef(renderResults(resultsRef.current.x, resultsRef.current.y));
 
-	const target = resultsRef.current.type.split(" ")[1].toLowerCase();
-
-	const imgRef = React.useRef<HTMLImageElement>();
+	const target = resultsRef.current.type?.split(" ")[1].toLowerCase();
 
 	const [currPoints, setCurrPoints] = React.useState(getPointsFromTarget(target));
+
+	const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+	const [modalTarget, setModalTarget] = React.useState<TheoremTypes | null>(null);
+
+	const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 1024);
 
 	const btnColorTypes: DropdownItem[] = [
 		{
@@ -89,32 +98,121 @@ export const TheoremResults = () =>
 		}
 	];
 
+	const openModal = (target: TheoremTypes) =>
+	{
+		if (modalTarget !== target)
+			setModalTarget(target);
+
+		if (!isModalOpen)
+			setIsModalOpen(true);
+	}
+
+	const closeModal = () => { if (isModalOpen) setIsModalOpen(false); }
+
+	React.useEffect(() => 
+	{
+		const onResize = () => { setIsMobile(window.innerWidth <= 1024); };
+		window.addEventListener("resize", onResize);
+		return () => { window.removeEventListener("resize", onResize); };
+	}, []);
+
+	
+
+	const onDownloadPdfLink = (e: React.MouseEvent) =>
+	{
+		const pdfRenderData = {
+			resultText: `U bent ${resultsRef.current?.type}. (${translateColor(renderRef.current?.color)})`,
+			points: getPointsFromTarget(target)
+		};
+
+		e.preventDefault();
+		downloadPdf(renderRef.current.dataUrl, pdfRenderData);
+	}
+
+	const hasEmptyResults = !renderRef.current;
+
 	return (
 		<FlexBox fill id="theorem-results">
 			<FlexItem className="left">
 				<View fill position="absolute">
 					<View position="relative" className="content">
-						<Heading type="header">Klaar!</Heading>
-						<View>
-							U bent {resultsRef.current.type}. ({translateColor(renderRef.current.color)})
-						</View>
-						<View>
-							<span>Zie de kenmerken van een andere kleur: </span><DropdownButton items={btnColorTypes} initIndex={getInitIndex(target)} />
-						</View>
-						<View>
-							{currPoints.map((p, i) => <p key={i}>{resultInfoPoints[i]}: {p}</p>)}
-						</View>
 
-						{/* <button onClick={() => { downloadPdf(imgRef.current) }}>download pdf</button> */}
+						{!hasEmptyResults ? (
+							<>
+								<Heading type="header">Klaar!</Heading>
+								<Heading type="sub">
+									U bent {resultsRef.current?.type}. ({translateColor(renderRef.current?.color)})
+								</Heading>
+							</>
+						) : (
+								<View id="fail">
+									<Heading type="header">
+										U heeft geen antwoorden gegeven!
+									</Heading>
+									<Heading type="sub" style={{ marginBottom: "20px" }}>
+										Hierdoor zijn er geen resultaten.
+									</Heading>
+									<Button id="fail" type="secundary" onClick={() => { retry() }}>
+										Terug
+									</Button>
+								</View>
+							)}
+						{!hasEmptyResults && (
+							<>
+								{isMobile && (
+									<>
+										<p> Klik op een kleur om te zien wat de herken punten zijn op communicatief gebied van die kleur.</p>
+										<ResultGridRenderer onClick={openModal} />
+										<p>Zie hieronder uw kenmerken, kies een andere kleur om daar de kenmerken van te zien of download het resultaat als pdf <a href="#" onClick={onDownloadPdfLink}>hier</a>.</p>
+									</>
+								)}
+								<View className="others">
+									<span>Zie de kenmerken van een andere kleur: </span><DropdownButton items={btnColorTypes} initIndex={getInitIndex(target)} />
+								</View>
+								<View>
+									{currPoints?.map((p, i) => <p key={i}>{resultInfoPoints[i]}: {p}</p>)}
+								</View>
+							</>
+						)}
 					</View>
 				</View>
 			</FlexItem>
-			<FlexItem className="right">
-				<View position="absolute" className="content" fill>
-					<img ref={imgRef} src={renderRef.current.dataUrl} style={{ maxWidth: "100%" }} />
-				</View>
-			</FlexItem>
-		</FlexBox>
+			{!isMobile && !hasEmptyResults && (
+				<FlexItem className="right">
+					<View position="absolute" className="content" fill>
+						<p>Klik op een kleur om te zien wat de herken punten zijn op communicatief gebied van die kleur.</p>
+						<ResultGridRenderer onClick={openModal} />
+						<Button type="primary" onClick={onDownloadPdfLink}>download pdf</Button>
+					</View>
+				</FlexItem>
+			)}
+			<View className={getClassFromProps("modal-wrapper", { show: isModalOpen })} position="absolute" fill onClick={closeModal}>
+				<Container fill>
+					<View className="modal" position="absolute" center onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}>
+						<Panel>
+							<FlexBox dir="vertical">
+								<FlexItem base={64}>
+									<View position="absolute" center="vertical">
+										<Heading type="header">
+
+										</Heading>
+									</View>
+								</FlexItem>
+								<FlexItem className="body">
+									{getCommunicationInfo(modalTarget)}
+								</FlexItem>
+								<FlexItem base={64}>
+									<View position="absolute" center>
+										<Button type="tertiary" onClick={() => setIsModalOpen(false)}>
+											Terug
+										</Button>
+									</View>
+								</FlexItem>
+							</FlexBox>
+						</Panel>
+					</View>
+				</Container>
+			</View>
+		</FlexBox >
 	);
 }
-
