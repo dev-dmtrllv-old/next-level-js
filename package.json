@@ -5,8 +5,7 @@
 	"private": "true",
 	"scripts": {
 		"start": "webpack-dev-server --watch --colors",
-		"build": "webpack --mode production",
-		"postbuild": "react-snap"
+		"build": "webpack --mode production"
 	},
 	"author": {
 		"name": "Dimitri Lilov",
