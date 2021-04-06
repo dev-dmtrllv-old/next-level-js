@@ -5,11 +5,15 @@ export namespace Storage
 	const THEOREM_POINTS_KEY = "theorem_points";
 	const THEOREM_ID = "theorem_id";
 	const THEOREM_TIMER = "theorem_timer";
+	const THEOREM_RESULT_TIME = "theorem_result_time";
 
 	/**
 	 * @returns all the theorem results from storage
 	 */
-	export const getAllTheoremResults = (): TheoremResults => JSON.parse(localStorage.getItem(THEOREM_POINTS_KEY)) || {};
+	export const getAllTheoremResults = (): TheoremResults => 
+	{
+		return JSON.parse(localStorage.getItem(THEOREM_POINTS_KEY)) || {}
+	};
 
 	/**
 	 * Sets one or multiple theorem results in the local storage
@@ -47,7 +51,7 @@ export namespace Storage
 	export const getPageID = (): number => 
 	{
 		const id = localStorage.getItem(THEOREM_ID);
-		if(typeof id === "string")
+		if (typeof id === "string")
 			return +id;
 		return 0;
 	};
@@ -67,8 +71,19 @@ export namespace Storage
 	 */
 	export const getLeftTime = () => 
 	{
-		if(localStorage.getItem(THEOREM_TIMER) == null)
+		if (localStorage.getItem(THEOREM_TIMER) == null)
 			localStorage.setItem(THEOREM_TIMER, THEOREM_MAX_TIME.toString());
 		return +localStorage.getItem(THEOREM_TIMER);
 	};
+
+	export const getLastResultTime = (): number =>
+	{
+		return +localStorage.getItem(THEOREM_RESULT_TIME) || 0;
+	}
+
+	export const setLastResultTime = () =>
+	{
+		if (!localStorage.getItem(THEOREM_RESULT_TIME))
+			localStorage.setItem(THEOREM_RESULT_TIME, Date.now().toString());
+	}
 }

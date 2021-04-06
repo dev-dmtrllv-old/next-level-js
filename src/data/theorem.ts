@@ -45,13 +45,15 @@ export const introPoints = [
 	"Er is geen goed of fout. Het allerbelangrijkste is het antwoord dat je geeft oprecht het best passende antwoord voor jou is. \n Tip: het eerste dat bij je opkomt is."
 ];
 
-export const info = "Verdeel drie punten over de twee stellingen. Hoe beter de stelling bij je past, hoe meer punten je het geeft. Indien er punten overblijven worden de automatisch aan de andere stelling toegekend";
+export const info = "Verdeel drie punten over de twee stellingen. Hoe beter de stelling bij je past, hoe meer punten je het geeft. Indien er punten overblijven worden de automatisch aan de andere stelling toegekend.";
 
 export const THEOREM_MAX_PAGES = Object.keys(theorems).length / 2;
 
 export const THEOREM_MAX_TIME = 60 * 20; // 20 min
 
 export const THEOREM_NOTIFICATION_TIME = 60 * 5; // 5 min
+
+export const THEOREM_RESULT_LIFE_TIME = 604800000; // 1 week
 
 export type TheoremResults = {
 	[id: string]: TheoremPoints;

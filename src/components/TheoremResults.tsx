@@ -12,6 +12,7 @@ import { DropdownButton, FlexBox, FlexItem, View, Container, Heading, DropdownIt
 
 import { TheoremContext } from "./TheoremContext";
 import { downloadPdf } from "services/pdf";
+import { Storage } from "../services/storage";
 
 import "./styles/theorem-results.scss";
 
@@ -126,6 +127,7 @@ export const TheoremResults = () =>
 
 	React.useEffect(() => 
 	{
+		Storage.setLastResultTime();
 		const onResize = () => { setIsMobile(window.innerWidth <= 1024); };
 		window.addEventListener("resize", onResize);
 		return () => { window.removeEventListener("resize", onResize); };
