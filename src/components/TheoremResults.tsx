@@ -62,10 +62,25 @@ const translateColor = (color: string) =>
 	}
 }
 
+const getCommunicationInfoTitle = (target: TheoremTypes) =>
+{
+	switch (target)
+	{
+		case "analyticus":
+			return "Analyticus - Blauw";
+		case "motivator":
+			return "Motivator - Geel";
+		case "regisseur":
+			return "Regisseur - Rood";
+		case "zorger":
+			return "Zorger - Groen";
+	}
+}
+
 export const TheoremResults = () =>
 {
 	const { results, retry } = React.useContext(TheoremContext);
-	
+
 	const resultsRef = React.useRef(calculateResults(results));
 
 	const renderRef = React.useRef(renderResults(resultsRef.current.x, resultsRef.current.y));
@@ -116,7 +131,7 @@ export const TheoremResults = () =>
 		return () => { window.removeEventListener("resize", onResize); };
 	}, []);
 
-	
+
 
 	const onDownloadPdfLink = (e: React.MouseEvent) =>
 	{
@@ -145,18 +160,18 @@ export const TheoremResults = () =>
 								</Heading>
 							</>
 						) : (
-								<View id="fail">
-									<Heading type="header">
-										U heeft geen antwoorden gegeven!
+							<View id="fail">
+								<Heading type="header">
+									U heeft geen antwoorden gegeven!
 									</Heading>
-									<Heading type="sub" style={{ marginBottom: "20px" }}>
-										Hierdoor zijn er geen resultaten.
+								<Heading type="sub" style={{ marginBottom: "20px" }}>
+									Hierdoor zijn er geen resultaten.
 									</Heading>
-									<Button id="fail" type="secundary" onClick={() => { retry() }}>
-										Terug
+								<Button id="fail" type="secundary" onClick={() => { retry() }}>
+									Terug
 									</Button>
-								</View>
-							)}
+							</View>
+						)}
 						{!hasEmptyResults && (
 							<>
 								{isMobile && (
@@ -194,12 +209,12 @@ export const TheoremResults = () =>
 								<FlexItem base={64}>
 									<View position="absolute" center="vertical">
 										<Heading type="header">
-
+											{getCommunicationInfoTitle(modalTarget)}
 										</Heading>
 									</View>
 								</FlexItem>
 								<FlexItem className="body">
-									{getCommunicationInfo(modalTarget)}
+									{getCommunicationInfo(modalTarget)?.join(" ")}
 								</FlexItem>
 								<FlexItem base={64}>
 									<View position="absolute" center>
