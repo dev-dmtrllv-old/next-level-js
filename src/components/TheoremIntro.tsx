@@ -16,7 +16,7 @@ export const TheoremIntro = () =>
 		<View id="theorem-intro">
 			<Container>
 				<Panel>
-					<Heading>Wat is jou manier van communiceren?</Heading>
+					<Heading>Wat is jouw manier van communiceren?</Heading>
 					<Heading type="sub">Dit zijn belangrijke tips voor het invullen van de vragen om zo betrouwbare mogelijke antwoorden te krijgen.</Heading>
 					{introPoints.map((point, i) => (
 						<FlexBox className="point" key={i}>
@@ -24,7 +24,9 @@ export const TheoremIntro = () =>
 								<View className="bullet" position="absolute" center="horizontal" />
 							</FlexItem>
 							<FlexItem>
-								{point}
+								{point.split("\n")[0]}
+								<br />
+								{point.split("\n")[1]}
 							</FlexItem>
 						</FlexBox>
 					))}

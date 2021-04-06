@@ -9,6 +9,7 @@
 	.panel {
 		h1 {
 			margin-bottom: 15px !important;
+			color: $purple;
 		}
 		h2 {
 			margin-bottom: 25px !important;
@@ -32,10 +33,10 @@
 					display: none;
 				}
 				.bullet {
-					top: 2px;
+					top: 7px;
 					display: inline-block;
-					width: 17px;
-					height: 17px;
+					width: 10px;
+					height: 10px;
 					background-color: $grey;
 					border-radius: 20px;
 				}

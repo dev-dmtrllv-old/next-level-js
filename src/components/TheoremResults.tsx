@@ -141,7 +141,7 @@ export const TheoremResults = () =>
 							<>
 								<Heading type="header">Klaar!</Heading>
 								<Heading type="sub">
-									U bent {resultsRef.current?.type}. ({translateColor(renderRef.current?.color)})
+									U bent {translateColor(renderRef.current?.color)}, een {resultsRef.current?.type.toLowerCase()}
 								</Heading>
 							</>
 						) : (
@@ -170,7 +170,7 @@ export const TheoremResults = () =>
 									<span>Zie de kenmerken van een andere kleur: </span><DropdownButton items={btnColorTypes} initIndex={getInitIndex(target)} />
 								</View>
 								<View>
-									{currPoints?.map((p, i) => <p key={i}>{resultInfoPoints[i]}: {p}</p>)}
+									{currPoints?.map((p, i) => <p key={i}>{resultInfoPoints[i]}: {p.toLowerCase()}</p>)}
 								</View>
 							</>
 						)}

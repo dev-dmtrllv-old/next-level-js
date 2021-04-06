@@ -27,10 +27,6 @@ export const downloadPdf = async (dataUrl: string, data: PDFData) =>
 
 	const resultImgWidth = 100;
 
-	const padding = {
-		top: 5,
-		left: 15
-	};
 
 	pdf.addImage(logoImg, "PNG", 5, 5, 50, 20);
 	let tw = pdf.getTextWidth(data.resultText);
@@ -53,7 +49,7 @@ export const downloadPdf = async (dataUrl: string, data: PDFData) =>
 	}
 
 
-	pdf.save("werk-30-test.pdf");
+	pdf.save("Uitslag communicatiestijlen – Werk 30.pdf");
 }
 
 type PDFData = {

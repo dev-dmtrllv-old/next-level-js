@@ -38,14 +38,14 @@ export const theorems: TheoremTextData = {
 };
 
 export const introPoints = [
-	"Kies vooraf een duidelijke context, zoals ‘mijn functioneren op mijn werk’ of ‘mijn functioneren in mijn gezin’. De context kan namelijk invloed hebben op je gedrag.",
-	"Vul de antwoorden uit de test vanuit deze context in. In bewering 1A staat bijvoorbeeld ‘ik maak gemakkelijk contact met mensen’. Vul dan “mensen” in vanuit jouw context, bijvoorbeeld collega’s, ouders, kinderen.",
+	"Kies vooraf een duidelijke context, zoals ‘mijn functioneren op mijn werk’ of ‘mijn functioneren in mijn gezin’.\n De context kan namelijk invloed hebben op je gedrag.",
+	"Vul de antwoorden uit de test vanuit deze context in. In bewering 1A staat bijvoorbeeld ‘ik maak gemakkelijk contact met mensen’. \nVul dan “mensen” in vanuit jouw context, bijvoorbeeld collega’s, ouders, kinderen.",
 	"Vul de vragen in vanuit je huidige daadwerkelijke gedrag ‘dit doe ik in deze specifieke context’ en niet vanuit je wenselijke gedrag ’ik zou graag willen dat ik het zo deed’.",
-	"Wees toeschouwer van jezelf. Bekijk jezelf gerust van een afstand, alsof je jezelfziet op een televisiescherm. Wat doe je dan? Wat zie je, hoor je? Vul vanuit deze ‘neutrale positie’ als toeschouwer de test in.",
-	"Er is geen goed of fout. Het allerbelangrijkste is het antwoord dat je geeft oprecht het best passende antwoord voor jou is. Tip: het eerste dat bij je opkomt is."
+	"Wees toeschouwer van jezelf. Bekijk jezelf gerust van een afstand, alsof je jezelfziet op een televisiescherm. Wat doe je dan? \n Wat zie je, hoor je? Vul vanuit deze ‘neutrale positie’ als toeschouwer de test in.",
+	"Er is geen goed of fout. Het allerbelangrijkste is het antwoord dat je geeft oprecht het best passende antwoord voor jou is. \n Tip: het eerste dat bij je opkomt is."
 ];
 
-export const info = "Verdeel 3 punten over de 2 stellingen die het beste bij jou passen. De overgebleven punten worden automatisch bij de andere stelling neergezet.";
+export const info = "Verdeel drie punten over de twee stellingen. Hoe beter de stelling bij je past, hoe meer punten je het geeft. Indien er punten overblijven worden de automatisch aan de andere stelling toegekend";
 
 export const THEOREM_MAX_PAGES = Object.keys(theorems).length / 2;
 
@@ -88,9 +88,9 @@ export const resultInfoPoints = [
 
 export const regissuerPoints = [
 	"Initiatief nemen",
-	"Ongeduldig, Ongevoelig",
+	"Ongeduldig en Ongevoelig",
 	"Besluiteloosheid",
-	"Productiviteit, Controle",
+	"Productiviteit en Controle",
 	"Bedrog",
 	"Winnen en macht",
 	"Voortgang bewaken",
@@ -109,9 +109,9 @@ export const regissuerPoints = [
 
 export const motivatorPoints = [
 	"Overtuiging persoonlijke interactie",
-	"Ongeorganiseerd, Zorgeloosheid",
+	"Ongeorganiseerd en Zorgeloosheid",
 	"Routine",
-	"Populariteit, Applaus",
+	"Populariteit en Applaus",
 	"Prestigeverlies",
 	"Erkenning en goedkeuring",
 	"Energie opwekken",
@@ -120,7 +120,7 @@ export const motivatorPoints = [
 	"Inspireert",
 	"Ben interessant",
 	"Inzichten en ingevingen",
-	"Hoogvolume, wisselende toonhoogtes",
+	"Hoogvolume en wisselende toonhoogtes",
 	"Deelt gemakkelijk gevoelens",
 	"Inzet te doseren",
 	"Neemt risico’s",
@@ -129,10 +129,10 @@ export const motivatorPoints = [
 ];
 
 export const zorgerPoints = [
-	"Servicegerichtheid, luisteren",
-	"Overgevoeligheid, Besluiteloosheid",
+	"Servicegerichtheid en luisteren",
+	"Overgevoeligheid en Besluiteloosheid",
 	"Ongevoeligheid",
-	"Acceptatie, Stabiliteit",
+	"Acceptatie en Stabiliteit",
 	"Plotselinge verandering",
 	"Betrokkenheid en goedkeuring",
 	"Verbinden",
@@ -141,7 +141,7 @@ export const zorgerPoints = [
 	"Mogelijkheden biedt",
 	"Ben coöperatief",
 	"Relaties en gevoelens",
-	"Laag volume, wisselende toonhoogtes",
+	"Laag volume en wisselende toonhoogtes",
 	"Deelt gemakkelijk gevoelens",
 	"Relaties te behouden",
 	"Vermijdt risico’s",
@@ -150,9 +150,9 @@ export const zorgerPoints = [
 ];
 
 export const analyticusPoints = [
-	"Planning Analyse",
-	"Perfectionisme, Overdreven kritisch",
-	"Accuratessem, Gedegenheid",
+	"Planning en Analyse",
+	"Perfectionisme en Overdreven kritisch",
+	"Accuratessem en Gedegenheid",
 	"Structuur en respect",
 	"aanbrengen",
 	"Vermijden",
@@ -160,7 +160,7 @@ export const analyticusPoints = [
 	"Informeert en beschrijft",
 	"Ben accuraat",
 	"Principes en denkbeelden",
-	"Laag volume, monotoon",
+	"Laag volume, en monotoon",
 	"gevoelens voor zichzelf",
 	"gezicht te redden",
 	"Vermijdt risico’s",

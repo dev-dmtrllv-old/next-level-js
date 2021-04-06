@@ -80,20 +80,38 @@ export const calculateResults = (results: TheoremResults | null) =>
 
 	if (x < 0 && y < 0)
 	{
-		type = "Regisseur - Dominant"
+		type = "Regisseur";
 	}
 	else if (x < 0 && y > 0)
 	{
-		type = "Motivator - Invloed";
+		type = "Motivator";
 	}
 	else if (x > 0 && y < 0)
 	{
-		type = "Analyticus - Consequent"
+		type = "Analyticus"
 	}
 	else if (x > 0 && y > 0)
 	{
-		type = "Zorger - Stabiel";
+		type = "Zorger";
 	}
+
+// if (x < 0 && y < 0)
+// 	{
+// 		type = "Regisseur - Dominant"
+// 	}
+// 	else if (x < 0 && y > 0)
+// 	{
+// 		type = "Motivator - Invloed";
+// 	}
+// 	else if (x > 0 && y < 0)
+// 	{
+// 		type = "Analyticus - Consequent"
+// 	}
+// 	else if (x > 0 && y > 0)
+// 	{
+// 		type = "Zorger - Stabiel";
+// 	}
+
 
 	let subType = "";
 
@@ -101,26 +119,26 @@ export const calculateResults = (results: TheoremResults | null) =>
 	{
 		if (y < -20.5)
 		{
-			subType = "regisserend";
+			subType = "regisserende";
 		}
 		else if (y < 0)
 		{
-			subType = "motiverend";
+			subType = "motiverende";
 		}
 		else if (y > 20.5)
 		{
-			subType = "motiverend";
+			subType = "motiverende";
 		}
 		else
 		{
-			subType = "regisserend";
+			subType = "regisserende";
 		}
 	}
 	else if (x < 0 || x > 20.5)
 	{
 		if (y < -20.5)
 		{
-			subType = "analytisch";
+			subType = "analytische";
 		}
 		else if (y < 0)
 		{
