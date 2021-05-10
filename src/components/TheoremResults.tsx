@@ -48,8 +48,6 @@ const getInitIndex = (target: string) =>
 
 const translateColor = (color: string) =>
 {
-	if (!color)
-		return "";
 	switch (color.toLowerCase())
 	{
 		case "green":
@@ -61,6 +59,23 @@ const translateColor = (color: string) =>
 		case "blue":
 			return "blauw";
 	}
+	return "";
+}
+
+const translateColor2 = (color: string) =>
+{
+	switch (color.toLowerCase())
+	{
+		case "green":
+			return "groene";
+		case "yellow":
+			return "gele";
+		case "red":
+			return "rode";
+		case "blue":
+			return "blauwe";
+	}
+	return "";
 }
 
 const getCommunicationInfoTitle = (target: TheoremTypes) =>
@@ -138,7 +153,7 @@ export const TheoremResults = () =>
 	const onDownloadPdfLink = (e: React.MouseEvent) =>
 	{
 		const pdfRenderData = {
-			resultText: `U bent ${resultsRef.current?.type}. (${translateColor(renderRef.current?.color)})`,
+			resultText: `U bent ${translateColor(renderRef.current?.color)}, een ${resultsRef.current?.type.toLowerCase()}`,
 			points: getPointsFromTarget(target)
 		};
 
@@ -187,7 +202,7 @@ export const TheoremResults = () =>
 									<span>Zie de kenmerken van een andere kleur: </span><DropdownButton items={btnColorTypes} initIndex={getInitIndex(target)} />
 								</View>
 								<View>
-									{currPoints?.map((p, i) => <p key={i}>{resultInfoPoints[i]}: {p.toLowerCase()}</p>)}
+									{currPoints?.map((p, i) => <p key={i}>{resultInfoPoints[i].replace("__COLOR__", translateColor2(renderRef.current?.color))}: {p.toLowerCase()}.</p>)}
 								</View>
 							</>
 						)}
