@@ -20,13 +20,13 @@ const getPointsFromTarget = (target: string) =>
 {
 	switch (target)
 	{
-		case "analyticus":
+		case "red":
 			return analyticusPoints;
-		case "motivator":
+		case "yellow":
 			return motivatorPoints;
-		case "zorger":
+		case "green":
 			return zorgerPoints;
-		case "regisseur":
+		case "blue":
 			return regissuerPoints;
 	}
 }
@@ -103,7 +103,8 @@ export const TheoremResults = () =>
 
 	const target = resultsRef.current.type?.split(" ")[1].toLowerCase();
 
-	const [currPoints, setCurrPoints] = React.useState(getPointsFromTarget(target));
+	// const [currPoints, setCurrPoints] = React.useState(getPointsFromTarget(target));
+	const [currColor, setCurrColor] = React.useState(renderRef.current.color);
 
 	const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
 	const [modalTarget, setModalTarget] = React.useState<TheoremTypes | null>(null);
@@ -113,19 +114,19 @@ export const TheoremResults = () =>
 	const btnColorTypes: DropdownItem[] = [
 		{
 			text: "Motivator (Geel)",
-			action: () => { setCurrPoints(getPointsFromTarget("motivator")) }
+			action: () => { setCurrColor("yellow"); }
 		},
 		{
 			text: "Zorger (Groen)",
-			action: () => { setCurrPoints(getPointsFromTarget("zorger")) }
+			action: () => { setCurrColor("green"); }
 		},
 		{
 			text: "Regisseur (Rood)",
-			action: () => { setCurrPoints(getPointsFromTarget("regisseur")) }
+			action: () => { setCurrColor("red"); }
 		},
 		{
 			text: "Analyticus (Blauw)",
-			action: () => { setCurrPoints(getPointsFromTarget("analyticus")) }
+			action: () => { setCurrColor("blue"); }
 		}
 	];
 
@@ -162,7 +163,7 @@ export const TheoremResults = () =>
 	}
 
 	const hasEmptyResults = !renderRef.current;
-
+	console.log(currColor);
 	return (
 		<FlexBox fill id="theorem-results">
 			<FlexItem className="left">
@@ -202,7 +203,7 @@ export const TheoremResults = () =>
 									<span>Zie de kenmerken van een andere kleur: </span><DropdownButton items={btnColorTypes} initIndex={getInitIndex(target)} />
 								</View>
 								<View>
-									{currPoints?.map((p, i) => <p key={i}>{resultInfoPoints[i].replace("__COLOR__", translateColor2(renderRef.current?.color))}: {p.toLowerCase()}.</p>)}
+									{getPointsFromTarget(currColor).map((p, i) => <p key={i}>{resultInfoPoints[i].replace("__COLOR__", translateColor2(currColor))}: {p.toLowerCase()}.</p>)}
 								</View>
 							</>
 						)}
