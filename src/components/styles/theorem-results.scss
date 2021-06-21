@@ -194,6 +194,7 @@
 		overflow: hidden;
 		transition: opacity 350ms, width 0ms 350ms, height 0ms 350ms;
 		opacity: 0;
+		z-index: 999;
 		&.show {
 			width: 100%;
 			height: 100%;
@@ -205,12 +206,18 @@
 		background-color: rgba(0, 0, 0, 0.45);
 		.modal {
 			width: 100%;
+			.body {
+				padding-bottom: 20px;
+				p {
+					margin-block-start: 0.65em;
+					margin-block-end: 0.65em;
+				}
+			}
 		}
 		@include media("mobile", "tablet") {
 			position: fixed;
 			left: 0px;
 			top: 0px;
-			z-index: 999;
 		}
 	}
 
