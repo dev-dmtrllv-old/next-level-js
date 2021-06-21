@@ -20,13 +20,13 @@ const getPointsFromTarget = (target: string) =>
 {
 	switch (target)
 	{
-		case "red":
+		case "blue":
 			return analyticusPoints;
 		case "yellow":
 			return motivatorPoints;
 		case "green":
 			return zorgerPoints;
-		case "blue":
+		case "red":
 			return regissuerPoints;
 	}
 }
@@ -149,8 +149,6 @@ export const TheoremResults = () =>
 		return () => { window.removeEventListener("resize", onResize); };
 	}, []);
 
-
-
 	const onDownloadPdfLink = (e: React.MouseEvent) =>
 	{
 		const pdfRenderData = {
@@ -163,7 +161,9 @@ export const TheoremResults = () =>
 	}
 
 	const hasEmptyResults = !renderRef.current;
+	
 	console.log(currColor);
+	
 	return (
 		<FlexBox fill id="theorem-results">
 			<FlexItem className="left">
@@ -232,7 +232,7 @@ export const TheoremResults = () =>
 									</View>
 								</FlexItem>
 								<FlexItem className="body">
-									{getCommunicationInfo(modalTarget)?.join(" ")}
+									{getCommunicationInfo(modalTarget)?.map(p => <p>{p}</p>)}
 								</FlexItem>
 								<FlexItem base={64}>
 									<View position="absolute" center>

@@ -6,6 +6,7 @@
 		box-shadow: 0 0 0 0;
 	}
 	font-size: 16px;
+	z-index: 600;
 	.dropdown {
 		width: calc(100% + 2px);
 		padding-bottom: 5px;
@@ -16,7 +17,7 @@
 		border: 1px solid $purple;
 		left: -1px;
 		top: calc(100% - 2px);
-		z-index: 100;
+		z-index: 600;
 		.item {
 			padding: auto 15px;
 			padding: 8px 0px;

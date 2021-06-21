@@ -180,7 +180,7 @@ export const getCommunicationInfo = (target: TheoremTypes) =>
 		case "analyticus":
 			return [
 				"Bereid u zeer goed voor en zorg voor feitelijke onderbouwing.",
-				"Setl in het begin geen persoonlijke vragen, bewaar afstand.",
+				"Stel in het begin geen persoonlijke vragen, bewaar afstand.",
 				"Geed de ander de tijd om te analyseren of om een correct antwoord te vinden.",
 				"wees op tijd en voorkom een nonchalante of informele indruk.",
 				"Geef zoveel mogelijk informatie schriftelijk, laat de ander beoordelen.",
