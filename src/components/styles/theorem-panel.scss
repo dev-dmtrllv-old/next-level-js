@@ -3,8 +3,9 @@
 .theorem-panel {
 	margin-bottom: 35px;
 	margin: unset;
-	height: 100%;
 	min-height: 120px;
+	box-sizing: unset;
+
 	@include media("mobile", "tablet") {
 		min-height: unset;
 	}

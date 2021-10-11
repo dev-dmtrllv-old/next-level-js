@@ -102,8 +102,13 @@
 	.right {
 		.content {
 			text-align: center;
-			p {
+			p, h1, h2 {
 				color: $purple;
+				padding-bottom: 15px;
+			}
+			span {
+				color: $purple;
+				font-size: 38px;
 			}
 		}
 	}

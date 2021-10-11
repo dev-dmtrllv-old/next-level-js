@@ -161,9 +161,10 @@ export const TheoremResults = () =>
 	}
 
 	const hasEmptyResults = !renderRef.current;
-	
-	console.log(currColor);
-	
+
+	const modalInfo = getCommunicationInfo(modalTarget) || [];
+	const modalInfoItems = modalInfo.length;
+
 	return (
 		<FlexBox fill id="theorem-results">
 			<FlexItem className="left">
@@ -181,13 +182,13 @@ export const TheoremResults = () =>
 							<View id="fail">
 								<Heading type="header">
 									U heeft geen antwoorden gegeven!
-									</Heading>
+								</Heading>
 								<Heading type="sub" style={{ marginBottom: "20px" }}>
 									Hierdoor zijn er geen resultaten.
-									</Heading>
+								</Heading>
 								<Button id="fail" type="secundary" onClick={() => { retry() }}>
 									Terug
-									</Button>
+								</Button>
 							</View>
 						)}
 						{!hasEmptyResults && (
@@ -213,7 +214,17 @@ export const TheoremResults = () =>
 			{!isMobile && !hasEmptyResults && (
 				<FlexItem className="right">
 					<View position="absolute" className="content" fill>
-						<p>Klik op een kleur om te zien wat de herken punten zijn op communicatief gebied van die kleur.</p>
+						<FlexBox className="text">
+							<FlexItem base={45}>
+								<span>&#8594;</span>
+							</FlexItem>
+							<FlexItem>
+								<h2>Klik op een kleur om te zien wat de herken punten zijn op communicatief gebied van die kleur.</h2>
+							</FlexItem>
+							<FlexItem base={45}>
+								<span>&#8592;</span>
+							</FlexItem>
+						</FlexBox>
 						<ResultGridRenderer onClick={openModal} />
 						<Button type="primary" onClick={onDownloadPdfLink}>download pdf</Button>
 					</View>
@@ -232,7 +243,14 @@ export const TheoremResults = () =>
 									</View>
 								</FlexItem>
 								<FlexItem className="body">
-									{getCommunicationInfo(modalTarget)?.map(p => <p>{p}</p>)}
+									{modalInfo.map((p, i) => 
+									{
+										if(i == 0)
+											return <h2 key={i}>{p}</h2>;
+										else if(i == modalInfoItems - 1)
+											return (<React.Fragment key={i}><br/><p>{p}</p></React.Fragment>);
+										return <p key={i}>{p}</p>;
+									})}
 								</FlexItem>
 								<FlexItem base={64}>
 									<View position="absolute" center>

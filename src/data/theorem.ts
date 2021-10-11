@@ -179,49 +179,57 @@ export const getCommunicationInfo = (target: TheoremTypes) =>
 	{
 		case "analyticus":
 			return [
-				"Bereid u zeer goed voor en zorg voor feitelijke onderbouwing.",
-				"Stel in het begin geen persoonlijke vragen, bewaar afstand.",
-				"Geed de ander de tijd om te analyseren of om een correct antwoord te vinden.",
-				"wees op tijd en voorkom een nonchalante of informele indruk.",
-				"Geef zoveel mogelijk informatie schriftelijk, laat de ander beoordelen.",
-				"Houd zelf de regie.",
-				"Maak duidelijke afspraken en kom deze na.",
-				"Bied ruimte om na te denken, dring niet teveel aan."
+				"Hoe communiceer je met een ‘blauwe’?",
+				"Bereid je zeer goed voor en zorg voor feitelijk onderbouwing.",
+				"Stel in het begin niet gelijk persoonlijke vragen, bewaar wat afstand.",
+				"Geef de ander de tijd om het besprokene tot zich te nemen, te analyseren en/of om een correct antwoord te vinden.",
+				"Wees op tijd en voorkom een nonchalante of informele indruk.",
+				"Geef zoveel mogelijk schriftelijke informatie i.p.v. mondeling en laat de ander dit beoordelen.",
+				"Houd zelf de regie in het gesprek.",
+				"Maak duidelijk afspraken en kom deze na.",
+				"Bied ruimte zodat de ander kan nadenken, dring niet te veel aan.",
+				"N.B: Zelden is iemand volledig één kleur. Interpreteer deze uitleg dan ook met enige nuance."
 			];
 		case "motivator":
 			return [
-				"Zorg voor een vriendelijke en gezellige sfeer.",
-				"Treed in verbinding en ga in gesprek. Toon uw betrokkenheid.",
-				"Laat iets van uzelf zien.",
+				"Hoe communiceer je met een ‘gele’?",
+				"Zorg voor een vriendelijke en gezellige sfeer. ",
+				"Zoek in het gesprek de verbinding op door betrokkenheid te tonen en iets van jezelf te laten zien. ",
 				"Concentreer op het totaalplaatje.",
 				"Toon interesse, stel veel vragen en luister actief.",
-				"Help de ander overzicht te krijgen, doe het waar nodig samen.",
-				"Laat blijken dat u de ander aardig vindt, waardeert en goedkeurt.",
-				"vermijd detail (geef deze schriftelijk).",
-				"zorg voor een concreet vervolg."
+				"Help de ander om overzicht te krijgen en doe het indien nodig samen.",
+				"Laat blijken dat je de ander aardig vindt, waardeert en goedkeurt.",
+				"Vermijd details, verschaf deze indien nodig achteraf.",
+				"Zorg voor een concreet vervolg.",
+				"N.B: Zelden is iemand volledig één kleur. Interpreteer deze uitleg dan ook met enige nuance."
 			];
 		case "regisseur":
 			return [
-				"Wees goed voorbereid en zorg dat u uw informatie paraat hebt.",
-				"Richt u op de hoofdlijnen.",
-				"Wees kort en 'to the point', vermijd wollig en vaag taalgebruik.",
-				"Argumenteer met feiten, presenteer deze in logische en overzichtelijke volgorde.",
-				"Laat zien hoe de ander kan winnen. Creeer kansen en daag uit het spel te spelen.",
-				"Stem met elkaar concrete doelen af. Laat de ander het 'hoe' bepalen.",
-				"Erken hetgeen de ander bereikt heeft, complimenteer.",
-				"Geef ruimte en toestemming om zelfstandig te beslissen, geef daarbij kaders mee."
+				"Hoe communiceer je met een ‘rode’?",
+				"Wees goed voorbereid en heb de benodigde informatie paraat.",
+				"Richt je tijdens een gesprek op de hoofdlijnen.",
+				"Wees kort en to the point, vermijd wollig taalgebruik.",
+				"Argumenteer met feiten en presenteer deze in logische en overzichtelijke volgorde.",
+				"Laat zien hoe de ander kan winnen, creëer kansen en daag uit het spel te spelen.",
+				"Stem met elkaar concrete doelen af en laat de ander het ‘hoe’ bepalen.",
+				"Erken en benoem hetgeen de ander bereikt heeft, geef complimenten hierover.",
+				"Geef ruimte en toestemming zodat de ander zelfstandig kan beslissen, geef daarbij kaders mee wat het speelveld aangeeft.",
+				"N.B: Zelden is iemand volledig één kleur. Interpreteer deze uitleg dan ook met enige nuance."
 			];
 
 		case "zorger":
 			return [
-				"Zoek het juiste moment en creéer een ontspannen sfeer.",
+				"Hoe communiceer je met een ‘groene’?",
+
+				"Zoek het juiste moment en creëer een ontspannen sfeer.",
 				"Kom niet gelijk ter zake.",
-				"Start met persoonlijke opmerking, toon interesse in de anders familie.",
-				"Praat met rustige gelijkmatige stem, voorkom stemverheffing.",
-				"Laat zien dat u oprecht geinteresseerd bent, luister goed en vraag door.",
-				"Bereid de ander voor, neem hem mee in wat gaat gebeuren.",
-				"Geef de ander bedenktijd wanneer u een reactie vraagt.",
-				"Maak de ander duidelijk hoe uw voorstel risico's beperkt of uitsluit.",
+				"Start met een persoonlijke opmerking, toon interesse bijvoorbeeld in de familie van de ander.",
+				"Praat met rustige, gelijkmatige stem en voorkom stemverheffing.",
+				"Laat zien dat je oprecht geïnteresseerd bent, luister goed en vraag door.",
+				"Bereid de ander voor door hen mee te nemen in wat er komen gaat.",
+				"Geef de ander bedenktijd wanneer je graag een goede reactie wilt.",
+				"Maak de ander duidelijk hoe jouw voorstel risico’s beperkt op uitsluit.",
+				"N.B: Zelden is iemand volledig één kleur. Interpreteer deze uitleg dan ook met enige nuance."
 			];
 	}
 }
