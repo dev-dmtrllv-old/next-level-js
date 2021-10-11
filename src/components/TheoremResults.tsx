@@ -108,6 +108,7 @@ export const TheoremResults = () =>
 
 	const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
 	const [modalTarget, setModalTarget] = React.useState<TheoremTypes | null>(null);
+	const [downloadState, setDownloadState] = React.useState<{ isDownloading: boolean, didDownload: boolean }>({ isDownloading: false, didDownload: false });
 
 	const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 1024);
 
@@ -157,7 +158,16 @@ export const TheoremResults = () =>
 		};
 
 		e.preventDefault();
-		downloadPdf(renderRef.current.dataUrl, pdfRenderData);
+
+		if (!downloadState.isDownloading)
+		{
+			setDownloadState({ isDownloading: true, didDownload: downloadState.didDownload });
+
+			downloadPdf(renderRef.current.dataUrl, pdfRenderData).then(() => 
+			{
+				setDownloadState({ isDownloading: false, didDownload: true });
+			});
+		}
 	}
 
 	const hasEmptyResults = !renderRef.current;
@@ -197,7 +207,7 @@ export const TheoremResults = () =>
 									<>
 										<p> Klik op een kleur om te zien wat de herken punten zijn op communicatief gebied van die kleur.</p>
 										<ResultGridRenderer onClick={openModal} />
-										<p>Zie hieronder uw kenmerken, kies een andere kleur om daar de kenmerken van te zien of download het resultaat als pdf <a href="#" onClick={onDownloadPdfLink}>hier</a>.</p>
+										<p>Zie hieronder uw kenmerken, kies een andere kleur om daar de kenmerken van te zien of download het resultaat als pdf <a href="#" onClick={onDownloadPdfLink}>{downloadState.isDownloading ? "downloading..." : "hier"}</a>.</p>
 									</>
 								)}
 								<View className="others">
@@ -226,7 +236,7 @@ export const TheoremResults = () =>
 							</FlexItem>
 						</FlexBox>
 						<ResultGridRenderer onClick={openModal} />
-						<Button type="primary" onClick={onDownloadPdfLink}>download pdf</Button>
+						<Button type="primary" onClick={onDownloadPdfLink}>{downloadState.isDownloading ? "downloading..." : "download pdf"}</Button>
 					</View>
 				</FlexItem>
 			)}
@@ -245,10 +255,10 @@ export const TheoremResults = () =>
 								<FlexItem className="body">
 									{modalInfo.map((p, i) => 
 									{
-										if(i == 0)
+										if (i == 0)
 											return <h2 key={i}>{p}</h2>;
-										else if(i == modalInfoItems - 1)
-											return (<React.Fragment key={i}><br/><p>{p}</p></React.Fragment>);
+										else if (i == modalInfoItems - 1)
+											return (<React.Fragment key={i}><br /><p>{p}</p></React.Fragment>);
 										return <p key={i}>{p}</p>;
 									})}
 								</FlexItem>
