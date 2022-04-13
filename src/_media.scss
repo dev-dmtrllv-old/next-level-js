@@ -9,15 +9,15 @@ $desktop: 1400px;
 				@content;
 			}
 		} @else if $media == "tablet" {
-			@media only screen and (min-width: $mobile + 1) and (max-width: $tablet) {
+			@media only screen and (min-width: ($mobile + 1)) and (max-width: $tablet) {
 				@content;
 			}
 		} @else if $media == "desktop" {
-			@media only screen and (min-width: $tablet + 1) and (max-width: $desktop) {
+			@media only screen and (min-width: ($tablet + 1)) and (max-width: $desktop) {
 				@content;
 			}
 		} @else if $media == "large" {
-			@media only screen and (min-width: $desktop + 1) {
+			@media only screen and (min-width: ($desktop + 1)) {
 				@content;
 			}
 		}
@@ -27,7 +27,7 @@ $desktop: 1400px;
 @mixin dpr_media($ratios...) {
 	@each $ratio in $ratios {
 		@media only screen and (-moz-min-device-pixel-ratio: $ratio),
-			only screen and (-o-min-device-pixel-ratio: $ratio/1),
+			only screen and (-o-min-device-pixel-ratio: ($ratio/1)),
 			only screen and (-webkit-min-device-pixel-ratio: $ratio),
 			only screen and (min-device-pixel-ratio: $ratio) {
 			@content;

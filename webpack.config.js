@@ -73,11 +73,14 @@ module.exports = {
 		new CleanWebpackPlugin()
 	],
 	devServer: {
-		publicPath: "/",
-		clientLogLevel: "warning",
-		contentBase: "dist",
-		overlay: true,
+		static: {
+			publicPath: "/",
+		},
 		host: "0.0.0.0",
-		port: 1337
+		port: 1337,
+		client: {
+			logging: "error",
+			overlay: true,
+		},
 	}
 };

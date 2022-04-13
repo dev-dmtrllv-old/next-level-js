@@ -4,7 +4,7 @@ export namespace Storage
 {
 	const THEOREM_POINTS_KEY = "theorem_points";
 	const THEOREM_ID = "theorem_id";
-	const THEOREM_TIMER = "theorem_timer";
+	// const THEOREM_TIMER = "theorem_timer";
 	const THEOREM_RESULT_TIME = "theorem_result_time";
 
 	/**
@@ -64,17 +64,17 @@ export namespace Storage
 	/**
 	 * @param time the remaining time
 	 */
-	export const setTimerValue = (time: number) => localStorage.setItem(THEOREM_TIMER, time.toString());
+	// export const setTimerValue = (time: number) => localStorage.setItem(THEOREM_TIMER, time.toString());
 
 	/**
 	 * @returns the remaining time
 	 */
-	export const getLeftTime = () => 
-	{
-		if (localStorage.getItem(THEOREM_TIMER) == null)
-			localStorage.setItem(THEOREM_TIMER, THEOREM_MAX_TIME.toString());
-		return +localStorage.getItem(THEOREM_TIMER);
-	};
+	// export const getLeftTime = () => 
+	// {
+	// 	if (localStorage.getItem(THEOREM_TIMER) == null)
+	// 		localStorage.setItem(THEOREM_TIMER, THEOREM_MAX_TIME.toString());
+	// 	return +localStorage.getItem(THEOREM_TIMER);
+	// };
 
 	export const getLastResultTime = (): number =>
 	{

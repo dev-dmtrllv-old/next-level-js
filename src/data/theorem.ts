@@ -53,7 +53,7 @@ export const THEOREM_MAX_TIME = 60 * 20; // 20 min
 
 export const THEOREM_NOTIFICATION_TIME = 60 * 5; // 5 min
 
-export const THEOREM_RESULT_LIFE_TIME = 604800000; // 1 week
+export const THEOREM_RESULT_LIFE_TIME = 60 * 60 * 1000; // 1 hour
 
 export type TheoremResults = {
 	[id: string]: TheoremPoints;

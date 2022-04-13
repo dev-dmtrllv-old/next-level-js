@@ -180,7 +180,6 @@ export const TheoremResults = () =>
 			<FlexItem className="left">
 				<View fill position="absolute">
 					<View position="relative" className="content">
-
 						{!hasEmptyResults ? (
 							<>
 								<Heading type="header">Klaar!</Heading>
@@ -205,7 +204,7 @@ export const TheoremResults = () =>
 							<>
 								{isMobile && (
 									<>
-										<p> Klik op een kleur om te zien wat de herken punten zijn op communicatief gebied van die kleur.</p>
+										<p>Klik op een kleur om te zien wat de herken punten zijn op communicatief gebied van die kleur.</p>
 										<ResultGridRenderer onClick={openModal} />
 										<p>Zie hieronder uw kenmerken, kies een andere kleur om daar de kenmerken van te zien of download het resultaat als pdf <a href="#" onClick={onDownloadPdfLink}>{downloadState.isDownloading ? "downloading..." : "hier"}</a>.</p>
 									</>
@@ -216,6 +215,12 @@ export const TheoremResults = () =>
 								<View>
 									{getPointsFromTarget(currColor).map((p, i) => <p key={i}>{resultInfoPoints[i].replace("__COLOR__", translateColor2(currColor))}: {p.toLowerCase()}.</p>)}
 								</View>
+								{isMobile && (
+									<View center="horizontal">
+										<span style={{ fontSize: "16px", paddingTop: "15px" }}>De test wordt 1 uur lang bewaard. Druk op de knop hieronder om opnieuw te beginnen.</span>
+										<Button type="tertiary" style={{ marginTop: "15px" }} onClick={() => { retry() }}>Opnieuw</Button>
+									</View>
+								)}
 							</>
 						)}
 					</View>
@@ -237,6 +242,8 @@ export const TheoremResults = () =>
 						</FlexBox>
 						<ResultGridRenderer onClick={openModal} />
 						<Button type="primary" onClick={onDownloadPdfLink}>{downloadState.isDownloading ? "downloading..." : "download pdf"}</Button>
+						<span style={{ fontSize: "16px", paddingTop: "15px" }}>De test wordt 1 uur lang bewaard. Druk op de knop hieronder om opnieuw te beginnen.</span>
+						<Button type="secundary" style={{ marginTop: "15px" }} onClick={() => { retry() }}>Opnieuw</Button>
 					</View>
 				</FlexItem>
 			)}

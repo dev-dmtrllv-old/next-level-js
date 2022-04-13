@@ -13,9 +13,9 @@ export type TheoremContextProps = {
 	theoremPageID: number;
 	next: () => void;
 	retry: () => void;
-	showLeftTime: boolean;
-	isTimeUp: boolean;
-	hideTimerNotification: () => void;
+	// showLeftTime: boolean;
+	// isTimeUp: boolean;
+	// hideTimerNotification: () => void;
 	toResults: () => void;
 };
 
